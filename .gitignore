@@ -30,3 +30,15 @@
 *.exe
 *.out
 *.app
+
+# CMake
+build/
+
+*.pdf
+
+# Vscode related
+.vscode
+__pycache__/
+
+# Everything in the scene folder
+scenes/
