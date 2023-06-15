@@ -1,9 +1,9 @@
-#include "hw1.h"
-#include "hw2.h"
-#include "hw3.h"
-#include "hw4.h"
-#include "image.h"
-#include "parallel.h"
+#include "hw1.cuh"
+#include "hw2.cuh"
+#include "hw3.cuh"
+#include "hw4.cuh"
+#include "image.cuh"
+#include "parallel.cuh"
 #include <vector>
 #include <string>
 #include <thread>

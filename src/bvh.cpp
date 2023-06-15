@@ -1,4 +1,4 @@
-#include "bvh.h"
+#include "bvh.cuh"
 #include <vector>
 
 int construct_bvh(const std::vector<BBoxWithID> &boxes,

@@ -1,7 +1,7 @@
 #include "parse_serialized.h"
 #include "3rdparty/miniz.h"
-#include "flexception.h"
-#include "transform.h"
+#include "flexception.cuh"
+#include "transform.cuh"
 #include <fstream>
 #include <iostream>
 

@@ -3,8 +3,8 @@
 
 #include "torrey.h"
 #include <vector>
-#include "image.h"
-#include "pcg.h"
+#include "image.cuh"
+#include "pcg.cuh"
 
 // Borrowed from RTOW Chapter 7
 /*

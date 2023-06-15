@@ -1,6 +1,6 @@
 #include "parse_obj.h"
-#include "flexception.h"
-#include "transform.h"
+#include "flexception.cuh"
+#include "transform.cuh"
 
 #include <fstream>
 #include <functional>

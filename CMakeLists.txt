@@ -29,54 +29,54 @@ set(SRCS src/3rdparty/miniz.h
          src/3rdparty/stb_image.h
          src/3rdparty/tinyexr.h
          src/3rdparty/tinyply.h
-         src/bbox.h
-         src/bvh.h
-         src/camera.h
-         src/compute_normals.h
-         src/flexception.h
-         src/hw1.h
-         src/hw1_scenes.h
-         src/hw2.h
-         src/hw3.h
-         src/hw4.h
-         src/image.h
-         src/intersection.h
-         src/ray.h
-         src/material.h
-         src/matrix.h
-         src/parallel.h
+        src/bbox.cuh
+        src/bvh.cuh
+        src/camera.cuh
+        src/compute_normals.cuh
+        src/flexception.cuh
+        src/hw1.cuh
+        src/hw1_scenes.cuh
+        src/hw2.cuh
+        src/hw3.cuh
+        src/hw4.cuh
+        src/image.cuh
+        src/intersection.cuh
+        src/ray.cuh
+        src/material.cuh
+        src/matrix.cuh
+        src/parallel.cuh
          src/parse_obj.h
          src/parse_ply.h
-         src/parse_scene.h
+        src/parse_scene.cuh
          src/parse_serialized.h
-         src/pcg.h
-         src/print_scene.h
-         src/shape.h
-         src/sphere.h
-         src/texture.h
+        src/pcg.cuh
+        src/print_scene.cuh
+        src/shape.cuh
+        src/sphere.cuh
+        src/texture.cuh
          src/perlin.h
-         src/torrey.h
-         src/transform.h
+        src/torrey.h
+        src/transform.cuh
          src/vector.cuh
          src/bvh.cpp
-         src/camera.cpp
-         src/compute_normals.cpp
+        src/camera.cu
+        src/compute_normals.cu
          "src/hw1.cu"
-         src/hw2.cpp
+        src/hw2.cu
          src/hw3.cpp
          src/hw4.cpp
-         src/image.cpp
+        src/image.cu
          src/main.cu
-         src/parallel.cpp
+        src/parallel.cu
          src/parse_obj.cpp
          src/parse_ply.cpp
          src/parse_scene.cpp
          src/parse_serialized.cpp
-         src/print_scene.cpp
-         src/scene.cpp
-         src/shape.cpp
-         src/texture.cpp
-         src/transform.cpp)
+        src/print_scene.cu
+        src/scene.cu
+        src/shape.cu
+        src/texture.cu
+        src/transform.cu)
 
 add_library(torrey_lib STATIC ${SRCS})
 add_executable(torrey src/main.cu)

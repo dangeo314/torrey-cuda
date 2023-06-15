@@ -1,11 +1,11 @@
-#include "parse_scene.h"
+#include "parse_scene.cuh"
 #include "3rdparty/pugixml.hpp"
-#include "compute_normals.h"
-#include "flexception.h"
+#include "compute_normals.cuh"
+#include "flexception.cuh"
 #include "parse_obj.h"
 #include "parse_ply.h"
 #include "parse_serialized.h"
-#include "transform.h"
+#include "transform.cuh"
 #include <map>
 #include <regex>
 #include <vector>

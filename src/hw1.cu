@@ -1,10 +1,10 @@
-#include "hw1.h"
-#include "parallel.h"
-#include "pcg.h"
-#include "sphere.h"
-#include "ray.h"
+#include "hw1.cuh"
+#include "parallel.cuh"
+#include "pcg.cuh"
+#include "sphere.cuh"
+#include "ray.cuh"
 #include "vector.cuh"
-#include "hw1_scenes.h"
+#include "hw1_scenes.cuh"
 
 using namespace hw1;
 

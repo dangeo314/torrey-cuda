@@ -1,8 +1,8 @@
 #pragma once
 
 #include "torrey.h"
-#include "matrix.h"
-#include "parse_scene.h"
+#include "matrix.cuh"
+#include "parse_scene.cuh"
 #include <filesystem>
 
 /// Parse Wavefront obj files. Currently only supports triangles and quads.

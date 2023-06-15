@@ -1,6 +1,6 @@
 #include "parse_ply.h"
-#include "flexception.h"
-#include "transform.h"
+#include "flexception.cuh"
+#include "transform.cuh"
 #define TINYPLY_IMPLEMENTATION
 #include "3rdparty/tinyply.h"
 

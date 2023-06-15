@@ -1,0 +1,10 @@
+C:\Windows\system32\wsl.exe --distribution Ubuntu --exec /bin/bash -c "export CMAKE_COLOR_DIAGNOSTICS=ON && export CLION_IDE=TRUE && export JETBRAINS_IDE=TRUE && cd /mnt/c/Users/dange/Documents/cse168/torrey-cuda/cmake-build-default-wsl && /usr/bin/cmake -S /mnt/c/Users/dange/Documents/cse168/torrey-cuda -B /mnt/c/Users/dange/Documents/cse168/torrey-cuda/cmake-build-default-wsl"
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /mnt/c/Users/dange/Documents/cse168/torrey-cuda/cmake-build-default-wsl
+
+Cannot get compiler information:
+	Compiler exited with error code 1: \usr\bin\nvcc -O2 -g -DNDEBUG --generate-code=arch=compute_86,code=[compute_86,sm_86] -Wall -std=c++17 --dryrun /mnt/c/Users/dange/AppData/Local/Temp/compiler-file8707541930121832220.cu
+	nvcc fatal   : Unknown option '-Wall'
+	
+	

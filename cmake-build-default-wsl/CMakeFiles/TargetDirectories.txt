@@ -1,0 +1,4 @@
+/mnt/c/Users/dange/Documents/cse168/torrey-cuda/cmake-build-default-wsl/CMakeFiles/torrey_lib.dir
+/mnt/c/Users/dange/Documents/cse168/torrey-cuda/cmake-build-default-wsl/CMakeFiles/torrey.dir
+/mnt/c/Users/dange/Documents/cse168/torrey-cuda/cmake-build-default-wsl/CMakeFiles/edit_cache.dir
+/mnt/c/Users/dange/Documents/cse168/torrey-cuda/cmake-build-default-wsl/CMakeFiles/rebuild_cache.dir
