@@ -190,53 +190,53 @@ src/bvh.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/torrey_lib.dir/build.make CMakeFiles/torrey_lib.dir/src/bvh.cpp.s
 .PHONY : src/bvh.cpp.s
 
-src/camera.o: src/camera.cpp.o
+src/camera.o: src/camera.cu.o
 .PHONY : src/camera.o
 
 # target to build an object file
-src/camera.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/torrey_lib.dir/build.make CMakeFiles/torrey_lib.dir/src/camera.cpp.o
-.PHONY : src/camera.cpp.o
+src/camera.cu.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/torrey_lib.dir/build.make CMakeFiles/torrey_lib.dir/src/camera.cu.o
+.PHONY : src/camera.cu.o
 
-src/camera.i: src/camera.cpp.i
+src/camera.i: src/camera.cu.i
 .PHONY : src/camera.i
 
 # target to preprocess a source file
-src/camera.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/torrey_lib.dir/build.make CMakeFiles/torrey_lib.dir/src/camera.cpp.i
-.PHONY : src/camera.cpp.i
+src/camera.cu.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/torrey_lib.dir/build.make CMakeFiles/torrey_lib.dir/src/camera.cu.i
+.PHONY : src/camera.cu.i
 
-src/camera.s: src/camera.cpp.s
+src/camera.s: src/camera.cu.s
 .PHONY : src/camera.s
 
 # target to generate assembly for a file
-src/camera.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/torrey_lib.dir/build.make CMakeFiles/torrey_lib.dir/src/camera.cpp.s
-.PHONY : src/camera.cpp.s
+src/camera.cu.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/torrey_lib.dir/build.make CMakeFiles/torrey_lib.dir/src/camera.cu.s
+.PHONY : src/camera.cu.s
 
-src/compute_normals.o: src/compute_normals.cpp.o
+src/compute_normals.o: src/compute_normals.cu.o
 .PHONY : src/compute_normals.o
 
 # target to build an object file
-src/compute_normals.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/torrey_lib.dir/build.make CMakeFiles/torrey_lib.dir/src/compute_normals.cpp.o
-.PHONY : src/compute_normals.cpp.o
+src/compute_normals.cu.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/torrey_lib.dir/build.make CMakeFiles/torrey_lib.dir/src/compute_normals.cu.o
+.PHONY : src/compute_normals.cu.o
 
-src/compute_normals.i: src/compute_normals.cpp.i
+src/compute_normals.i: src/compute_normals.cu.i
 .PHONY : src/compute_normals.i
 
 # target to preprocess a source file
-src/compute_normals.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/torrey_lib.dir/build.make CMakeFiles/torrey_lib.dir/src/compute_normals.cpp.i
-.PHONY : src/compute_normals.cpp.i
+src/compute_normals.cu.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/torrey_lib.dir/build.make CMakeFiles/torrey_lib.dir/src/compute_normals.cu.i
+.PHONY : src/compute_normals.cu.i
 
-src/compute_normals.s: src/compute_normals.cpp.s
+src/compute_normals.s: src/compute_normals.cu.s
 .PHONY : src/compute_normals.s
 
 # target to generate assembly for a file
-src/compute_normals.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/torrey_lib.dir/build.make CMakeFiles/torrey_lib.dir/src/compute_normals.cpp.s
-.PHONY : src/compute_normals.cpp.s
+src/compute_normals.cu.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/torrey_lib.dir/build.make CMakeFiles/torrey_lib.dir/src/compute_normals.cu.s
+.PHONY : src/compute_normals.cu.s
 
 src/hw1.o: src/hw1.cu.o
 .PHONY : src/hw1.o
@@ -262,29 +262,29 @@ src/hw1.cu.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/torrey_lib.dir/build.make CMakeFiles/torrey_lib.dir/src/hw1.cu.s
 .PHONY : src/hw1.cu.s
 
-src/hw2.o: src/hw2.cpp.o
+src/hw2.o: src/hw2.cu.o
 .PHONY : src/hw2.o
 
 # target to build an object file
-src/hw2.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/torrey_lib.dir/build.make CMakeFiles/torrey_lib.dir/src/hw2.cpp.o
-.PHONY : src/hw2.cpp.o
+src/hw2.cu.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/torrey_lib.dir/build.make CMakeFiles/torrey_lib.dir/src/hw2.cu.o
+.PHONY : src/hw2.cu.o
 
-src/hw2.i: src/hw2.cpp.i
+src/hw2.i: src/hw2.cu.i
 .PHONY : src/hw2.i
 
 # target to preprocess a source file
-src/hw2.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/torrey_lib.dir/build.make CMakeFiles/torrey_lib.dir/src/hw2.cpp.i
-.PHONY : src/hw2.cpp.i
+src/hw2.cu.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/torrey_lib.dir/build.make CMakeFiles/torrey_lib.dir/src/hw2.cu.i
+.PHONY : src/hw2.cu.i
 
-src/hw2.s: src/hw2.cpp.s
+src/hw2.s: src/hw2.cu.s
 .PHONY : src/hw2.s
 
 # target to generate assembly for a file
-src/hw2.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/torrey_lib.dir/build.make CMakeFiles/torrey_lib.dir/src/hw2.cpp.s
-.PHONY : src/hw2.cpp.s
+src/hw2.cu.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/torrey_lib.dir/build.make CMakeFiles/torrey_lib.dir/src/hw2.cu.s
+.PHONY : src/hw2.cu.s
 
 src/hw3.o: src/hw3.cpp.o
 .PHONY : src/hw3.o
@@ -334,29 +334,29 @@ src/hw4.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/torrey_lib.dir/build.make CMakeFiles/torrey_lib.dir/src/hw4.cpp.s
 .PHONY : src/hw4.cpp.s
 
-src/image.o: src/image.cpp.o
+src/image.o: src/image.cu.o
 .PHONY : src/image.o
 
 # target to build an object file
-src/image.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/torrey_lib.dir/build.make CMakeFiles/torrey_lib.dir/src/image.cpp.o
-.PHONY : src/image.cpp.o
+src/image.cu.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/torrey_lib.dir/build.make CMakeFiles/torrey_lib.dir/src/image.cu.o
+.PHONY : src/image.cu.o
 
-src/image.i: src/image.cpp.i
+src/image.i: src/image.cu.i
 .PHONY : src/image.i
 
 # target to preprocess a source file
-src/image.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/torrey_lib.dir/build.make CMakeFiles/torrey_lib.dir/src/image.cpp.i
-.PHONY : src/image.cpp.i
+src/image.cu.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/torrey_lib.dir/build.make CMakeFiles/torrey_lib.dir/src/image.cu.i
+.PHONY : src/image.cu.i
 
-src/image.s: src/image.cpp.s
+src/image.s: src/image.cu.s
 .PHONY : src/image.s
 
 # target to generate assembly for a file
-src/image.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/torrey_lib.dir/build.make CMakeFiles/torrey_lib.dir/src/image.cpp.s
-.PHONY : src/image.cpp.s
+src/image.cu.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/torrey_lib.dir/build.make CMakeFiles/torrey_lib.dir/src/image.cu.s
+.PHONY : src/image.cu.s
 
 src/main.o: src/main.cu.o
 .PHONY : src/main.o
@@ -385,29 +385,29 @@ src/main.cu.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/torrey.dir/build.make CMakeFiles/torrey.dir/src/main.cu.s
 .PHONY : src/main.cu.s
 
-src/parallel.o: src/parallel.cpp.o
+src/parallel.o: src/parallel.cu.o
 .PHONY : src/parallel.o
 
 # target to build an object file
-src/parallel.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/torrey_lib.dir/build.make CMakeFiles/torrey_lib.dir/src/parallel.cpp.o
-.PHONY : src/parallel.cpp.o
+src/parallel.cu.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/torrey_lib.dir/build.make CMakeFiles/torrey_lib.dir/src/parallel.cu.o
+.PHONY : src/parallel.cu.o
 
-src/parallel.i: src/parallel.cpp.i
+src/parallel.i: src/parallel.cu.i
 .PHONY : src/parallel.i
 
 # target to preprocess a source file
-src/parallel.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/torrey_lib.dir/build.make CMakeFiles/torrey_lib.dir/src/parallel.cpp.i
-.PHONY : src/parallel.cpp.i
+src/parallel.cu.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/torrey_lib.dir/build.make CMakeFiles/torrey_lib.dir/src/parallel.cu.i
+.PHONY : src/parallel.cu.i
 
-src/parallel.s: src/parallel.cpp.s
+src/parallel.s: src/parallel.cu.s
 .PHONY : src/parallel.s
 
 # target to generate assembly for a file
-src/parallel.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/torrey_lib.dir/build.make CMakeFiles/torrey_lib.dir/src/parallel.cpp.s
-.PHONY : src/parallel.cpp.s
+src/parallel.cu.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/torrey_lib.dir/build.make CMakeFiles/torrey_lib.dir/src/parallel.cu.s
+.PHONY : src/parallel.cu.s
 
 src/parse_obj.o: src/parse_obj.cpp.o
 .PHONY : src/parse_obj.o
@@ -505,125 +505,125 @@ src/parse_serialized.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/torrey_lib.dir/build.make CMakeFiles/torrey_lib.dir/src/parse_serialized.cpp.s
 .PHONY : src/parse_serialized.cpp.s
 
-src/print_scene.o: src/print_scene.cpp.o
+src/print_scene.o: src/print_scene.cu.o
 .PHONY : src/print_scene.o
 
 # target to build an object file
-src/print_scene.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/torrey_lib.dir/build.make CMakeFiles/torrey_lib.dir/src/print_scene.cpp.o
-.PHONY : src/print_scene.cpp.o
+src/print_scene.cu.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/torrey_lib.dir/build.make CMakeFiles/torrey_lib.dir/src/print_scene.cu.o
+.PHONY : src/print_scene.cu.o
 
-src/print_scene.i: src/print_scene.cpp.i
+src/print_scene.i: src/print_scene.cu.i
 .PHONY : src/print_scene.i
 
 # target to preprocess a source file
-src/print_scene.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/torrey_lib.dir/build.make CMakeFiles/torrey_lib.dir/src/print_scene.cpp.i
-.PHONY : src/print_scene.cpp.i
+src/print_scene.cu.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/torrey_lib.dir/build.make CMakeFiles/torrey_lib.dir/src/print_scene.cu.i
+.PHONY : src/print_scene.cu.i
 
-src/print_scene.s: src/print_scene.cpp.s
+src/print_scene.s: src/print_scene.cu.s
 .PHONY : src/print_scene.s
 
 # target to generate assembly for a file
-src/print_scene.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/torrey_lib.dir/build.make CMakeFiles/torrey_lib.dir/src/print_scene.cpp.s
-.PHONY : src/print_scene.cpp.s
+src/print_scene.cu.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/torrey_lib.dir/build.make CMakeFiles/torrey_lib.dir/src/print_scene.cu.s
+.PHONY : src/print_scene.cu.s
 
-src/scene.o: src/scene.cpp.o
+src/scene.o: src/scene.cu.o
 .PHONY : src/scene.o
 
 # target to build an object file
-src/scene.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/torrey_lib.dir/build.make CMakeFiles/torrey_lib.dir/src/scene.cpp.o
-.PHONY : src/scene.cpp.o
+src/scene.cu.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/torrey_lib.dir/build.make CMakeFiles/torrey_lib.dir/src/scene.cu.o
+.PHONY : src/scene.cu.o
 
-src/scene.i: src/scene.cpp.i
+src/scene.i: src/scene.cu.i
 .PHONY : src/scene.i
 
 # target to preprocess a source file
-src/scene.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/torrey_lib.dir/build.make CMakeFiles/torrey_lib.dir/src/scene.cpp.i
-.PHONY : src/scene.cpp.i
+src/scene.cu.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/torrey_lib.dir/build.make CMakeFiles/torrey_lib.dir/src/scene.cu.i
+.PHONY : src/scene.cu.i
 
-src/scene.s: src/scene.cpp.s
+src/scene.s: src/scene.cu.s
 .PHONY : src/scene.s
 
 # target to generate assembly for a file
-src/scene.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/torrey_lib.dir/build.make CMakeFiles/torrey_lib.dir/src/scene.cpp.s
-.PHONY : src/scene.cpp.s
+src/scene.cu.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/torrey_lib.dir/build.make CMakeFiles/torrey_lib.dir/src/scene.cu.s
+.PHONY : src/scene.cu.s
 
-src/shape.o: src/shape.cpp.o
+src/shape.o: src/shape.cu.o
 .PHONY : src/shape.o
 
 # target to build an object file
-src/shape.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/torrey_lib.dir/build.make CMakeFiles/torrey_lib.dir/src/shape.cpp.o
-.PHONY : src/shape.cpp.o
+src/shape.cu.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/torrey_lib.dir/build.make CMakeFiles/torrey_lib.dir/src/shape.cu.o
+.PHONY : src/shape.cu.o
 
-src/shape.i: src/shape.cpp.i
+src/shape.i: src/shape.cu.i
 .PHONY : src/shape.i
 
 # target to preprocess a source file
-src/shape.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/torrey_lib.dir/build.make CMakeFiles/torrey_lib.dir/src/shape.cpp.i
-.PHONY : src/shape.cpp.i
+src/shape.cu.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/torrey_lib.dir/build.make CMakeFiles/torrey_lib.dir/src/shape.cu.i
+.PHONY : src/shape.cu.i
 
-src/shape.s: src/shape.cpp.s
+src/shape.s: src/shape.cu.s
 .PHONY : src/shape.s
 
 # target to generate assembly for a file
-src/shape.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/torrey_lib.dir/build.make CMakeFiles/torrey_lib.dir/src/shape.cpp.s
-.PHONY : src/shape.cpp.s
+src/shape.cu.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/torrey_lib.dir/build.make CMakeFiles/torrey_lib.dir/src/shape.cu.s
+.PHONY : src/shape.cu.s
 
-src/texture.o: src/texture.cpp.o
+src/texture.o: src/texture.cu.o
 .PHONY : src/texture.o
 
 # target to build an object file
-src/texture.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/torrey_lib.dir/build.make CMakeFiles/torrey_lib.dir/src/texture.cpp.o
-.PHONY : src/texture.cpp.o
+src/texture.cu.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/torrey_lib.dir/build.make CMakeFiles/torrey_lib.dir/src/texture.cu.o
+.PHONY : src/texture.cu.o
 
-src/texture.i: src/texture.cpp.i
+src/texture.i: src/texture.cu.i
 .PHONY : src/texture.i
 
 # target to preprocess a source file
-src/texture.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/torrey_lib.dir/build.make CMakeFiles/torrey_lib.dir/src/texture.cpp.i
-.PHONY : src/texture.cpp.i
+src/texture.cu.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/torrey_lib.dir/build.make CMakeFiles/torrey_lib.dir/src/texture.cu.i
+.PHONY : src/texture.cu.i
 
-src/texture.s: src/texture.cpp.s
+src/texture.s: src/texture.cu.s
 .PHONY : src/texture.s
 
 # target to generate assembly for a file
-src/texture.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/torrey_lib.dir/build.make CMakeFiles/torrey_lib.dir/src/texture.cpp.s
-.PHONY : src/texture.cpp.s
+src/texture.cu.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/torrey_lib.dir/build.make CMakeFiles/torrey_lib.dir/src/texture.cu.s
+.PHONY : src/texture.cu.s
 
-src/transform.o: src/transform.cpp.o
+src/transform.o: src/transform.cu.o
 .PHONY : src/transform.o
 
 # target to build an object file
-src/transform.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/torrey_lib.dir/build.make CMakeFiles/torrey_lib.dir/src/transform.cpp.o
-.PHONY : src/transform.cpp.o
+src/transform.cu.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/torrey_lib.dir/build.make CMakeFiles/torrey_lib.dir/src/transform.cu.o
+.PHONY : src/transform.cu.o
 
-src/transform.i: src/transform.cpp.i
+src/transform.i: src/transform.cu.i
 .PHONY : src/transform.i
 
 # target to preprocess a source file
-src/transform.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/torrey_lib.dir/build.make CMakeFiles/torrey_lib.dir/src/transform.cpp.i
-.PHONY : src/transform.cpp.i
+src/transform.cu.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/torrey_lib.dir/build.make CMakeFiles/torrey_lib.dir/src/transform.cu.i
+.PHONY : src/transform.cu.i
 
-src/transform.s: src/transform.cpp.s
+src/transform.s: src/transform.cu.s
 .PHONY : src/transform.s
 
 # target to generate assembly for a file
-src/transform.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/torrey_lib.dir/build.make CMakeFiles/torrey_lib.dir/src/transform.cpp.s
-.PHONY : src/transform.cpp.s
+src/transform.cu.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/torrey_lib.dir/build.make CMakeFiles/torrey_lib.dir/src/transform.cu.s
+.PHONY : src/transform.cu.s
 
 # Help Target
 help:

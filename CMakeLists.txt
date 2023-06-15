@@ -45,33 +45,33 @@ set(SRCS src/3rdparty/miniz.h
         src/material.cuh
         src/matrix.cuh
         src/parallel.cuh
-         src/parse_obj.h
-         src/parse_ply.h
+        src/parse_obj.cuh
+        src/parse_ply.cuh
         src/parse_scene.cuh
-         src/parse_serialized.h
+        src/parse_serialized.cuh
         src/pcg.cuh
         src/print_scene.cuh
         src/shape.cuh
         src/sphere.cuh
         src/texture.cuh
-         src/perlin.h
+        src/perlin.cuh
         src/torrey.h
         src/transform.cuh
          src/vector.cuh
-         src/bvh.cpp
+        src/bvh.cu
         src/camera.cu
         src/compute_normals.cu
          "src/hw1.cu"
         src/hw2.cu
-         src/hw3.cpp
-         src/hw4.cpp
+        src/hw3.cu
+        src/hw4.cu
         src/image.cu
          src/main.cu
         src/parallel.cu
-         src/parse_obj.cpp
-         src/parse_ply.cpp
-         src/parse_scene.cpp
-         src/parse_serialized.cpp
+        src/parse_obj.cu
+        src/parse_ply.cu
+        src/parse_scene.cu
+        src/parse_serialized.cu
         src/print_scene.cu
         src/scene.cu
         src/shape.cu

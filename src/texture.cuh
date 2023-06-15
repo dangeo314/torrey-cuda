@@ -4,7 +4,7 @@
 #include "vector.cuh"
 #include "image.cuh"
 #include <variant>
-#include "perlin.h"
+#include "perlin.cuh"
 
 struct ConstantTexture {
     Vector3 color;

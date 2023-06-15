@@ -97,33 +97,33 @@ CMakeFiles/torrey_lib.dir/src/bvh.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/torrey_lib.dir/src/bvh.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/dange/Documents/cse168/torrey-cuda/src/bvh.cpp -o CMakeFiles/torrey_lib.dir/src/bvh.cpp.s
 
-CMakeFiles/torrey_lib.dir/src/camera.cpp.o: CMakeFiles/torrey_lib.dir/flags.make
-CMakeFiles/torrey_lib.dir/src/camera.cpp.o: ../src/camera.cpp
-CMakeFiles/torrey_lib.dir/src/camera.cpp.o: CMakeFiles/torrey_lib.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/dange/Documents/cse168/torrey-cuda/cmake-build-default-wsl/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/torrey_lib.dir/src/camera.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/torrey_lib.dir/src/camera.cpp.o -MF CMakeFiles/torrey_lib.dir/src/camera.cpp.o.d -o CMakeFiles/torrey_lib.dir/src/camera.cpp.o -c /mnt/c/Users/dange/Documents/cse168/torrey-cuda/src/camera.cpp
+CMakeFiles/torrey_lib.dir/src/camera.cu.o: CMakeFiles/torrey_lib.dir/flags.make
+CMakeFiles/torrey_lib.dir/src/camera.cu.o: ../src/camera.cu
+CMakeFiles/torrey_lib.dir/src/camera.cu.o: CMakeFiles/torrey_lib.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/dange/Documents/cse168/torrey-cuda/cmake-build-default-wsl/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CUDA object CMakeFiles/torrey_lib.dir/src/camera.cu.o"
+	/usr/bin/nvcc -forward-unknown-to-host-compiler $(CUDA_DEFINES) $(CUDA_INCLUDES) $(CUDA_FLAGS) -MD -MT CMakeFiles/torrey_lib.dir/src/camera.cu.o -MF CMakeFiles/torrey_lib.dir/src/camera.cu.o.d -x cu -c /mnt/c/Users/dange/Documents/cse168/torrey-cuda/src/camera.cu -o CMakeFiles/torrey_lib.dir/src/camera.cu.o
 
-CMakeFiles/torrey_lib.dir/src/camera.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/torrey_lib.dir/src/camera.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/dange/Documents/cse168/torrey-cuda/src/camera.cpp > CMakeFiles/torrey_lib.dir/src/camera.cpp.i
+CMakeFiles/torrey_lib.dir/src/camera.cu.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CUDA source to CMakeFiles/torrey_lib.dir/src/camera.cu.i"
+	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_CUDA_CREATE_PREPROCESSED_SOURCE
 
-CMakeFiles/torrey_lib.dir/src/camera.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/torrey_lib.dir/src/camera.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/dange/Documents/cse168/torrey-cuda/src/camera.cpp -o CMakeFiles/torrey_lib.dir/src/camera.cpp.s
+CMakeFiles/torrey_lib.dir/src/camera.cu.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CUDA source to assembly CMakeFiles/torrey_lib.dir/src/camera.cu.s"
+	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_CUDA_CREATE_ASSEMBLY_SOURCE
 
-CMakeFiles/torrey_lib.dir/src/compute_normals.cpp.o: CMakeFiles/torrey_lib.dir/flags.make
-CMakeFiles/torrey_lib.dir/src/compute_normals.cpp.o: ../src/compute_normals.cpp
-CMakeFiles/torrey_lib.dir/src/compute_normals.cpp.o: CMakeFiles/torrey_lib.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/dange/Documents/cse168/torrey-cuda/cmake-build-default-wsl/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/torrey_lib.dir/src/compute_normals.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/torrey_lib.dir/src/compute_normals.cpp.o -MF CMakeFiles/torrey_lib.dir/src/compute_normals.cpp.o.d -o CMakeFiles/torrey_lib.dir/src/compute_normals.cpp.o -c /mnt/c/Users/dange/Documents/cse168/torrey-cuda/src/compute_normals.cpp
+CMakeFiles/torrey_lib.dir/src/compute_normals.cu.o: CMakeFiles/torrey_lib.dir/flags.make
+CMakeFiles/torrey_lib.dir/src/compute_normals.cu.o: ../src/compute_normals.cu
+CMakeFiles/torrey_lib.dir/src/compute_normals.cu.o: CMakeFiles/torrey_lib.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/dange/Documents/cse168/torrey-cuda/cmake-build-default-wsl/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CUDA object CMakeFiles/torrey_lib.dir/src/compute_normals.cu.o"
+	/usr/bin/nvcc -forward-unknown-to-host-compiler $(CUDA_DEFINES) $(CUDA_INCLUDES) $(CUDA_FLAGS) -MD -MT CMakeFiles/torrey_lib.dir/src/compute_normals.cu.o -MF CMakeFiles/torrey_lib.dir/src/compute_normals.cu.o.d -x cu -c /mnt/c/Users/dange/Documents/cse168/torrey-cuda/src/compute_normals.cu -o CMakeFiles/torrey_lib.dir/src/compute_normals.cu.o
 
-CMakeFiles/torrey_lib.dir/src/compute_normals.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/torrey_lib.dir/src/compute_normals.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/dange/Documents/cse168/torrey-cuda/src/compute_normals.cpp > CMakeFiles/torrey_lib.dir/src/compute_normals.cpp.i
+CMakeFiles/torrey_lib.dir/src/compute_normals.cu.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CUDA source to CMakeFiles/torrey_lib.dir/src/compute_normals.cu.i"
+	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_CUDA_CREATE_PREPROCESSED_SOURCE
 
-CMakeFiles/torrey_lib.dir/src/compute_normals.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/torrey_lib.dir/src/compute_normals.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/dange/Documents/cse168/torrey-cuda/src/compute_normals.cpp -o CMakeFiles/torrey_lib.dir/src/compute_normals.cpp.s
+CMakeFiles/torrey_lib.dir/src/compute_normals.cu.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CUDA source to assembly CMakeFiles/torrey_lib.dir/src/compute_normals.cu.s"
+	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_CUDA_CREATE_ASSEMBLY_SOURCE
 
 CMakeFiles/torrey_lib.dir/src/hw1.cu.o: CMakeFiles/torrey_lib.dir/flags.make
 CMakeFiles/torrey_lib.dir/src/hw1.cu.o: ../src/hw1.cu
@@ -139,19 +139,19 @@ CMakeFiles/torrey_lib.dir/src/hw1.cu.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CUDA source to assembly CMakeFiles/torrey_lib.dir/src/hw1.cu.s"
 	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_CUDA_CREATE_ASSEMBLY_SOURCE
 
-CMakeFiles/torrey_lib.dir/src/hw2.cpp.o: CMakeFiles/torrey_lib.dir/flags.make
-CMakeFiles/torrey_lib.dir/src/hw2.cpp.o: ../src/hw2.cpp
-CMakeFiles/torrey_lib.dir/src/hw2.cpp.o: CMakeFiles/torrey_lib.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/dange/Documents/cse168/torrey-cuda/cmake-build-default-wsl/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/torrey_lib.dir/src/hw2.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/torrey_lib.dir/src/hw2.cpp.o -MF CMakeFiles/torrey_lib.dir/src/hw2.cpp.o.d -o CMakeFiles/torrey_lib.dir/src/hw2.cpp.o -c /mnt/c/Users/dange/Documents/cse168/torrey-cuda/src/hw2.cpp
+CMakeFiles/torrey_lib.dir/src/hw2.cu.o: CMakeFiles/torrey_lib.dir/flags.make
+CMakeFiles/torrey_lib.dir/src/hw2.cu.o: ../src/hw2.cu
+CMakeFiles/torrey_lib.dir/src/hw2.cu.o: CMakeFiles/torrey_lib.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/dange/Documents/cse168/torrey-cuda/cmake-build-default-wsl/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CUDA object CMakeFiles/torrey_lib.dir/src/hw2.cu.o"
+	/usr/bin/nvcc -forward-unknown-to-host-compiler $(CUDA_DEFINES) $(CUDA_INCLUDES) $(CUDA_FLAGS) -MD -MT CMakeFiles/torrey_lib.dir/src/hw2.cu.o -MF CMakeFiles/torrey_lib.dir/src/hw2.cu.o.d -x cu -c /mnt/c/Users/dange/Documents/cse168/torrey-cuda/src/hw2.cu -o CMakeFiles/torrey_lib.dir/src/hw2.cu.o
 
-CMakeFiles/torrey_lib.dir/src/hw2.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/torrey_lib.dir/src/hw2.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/dange/Documents/cse168/torrey-cuda/src/hw2.cpp > CMakeFiles/torrey_lib.dir/src/hw2.cpp.i
+CMakeFiles/torrey_lib.dir/src/hw2.cu.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CUDA source to CMakeFiles/torrey_lib.dir/src/hw2.cu.i"
+	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_CUDA_CREATE_PREPROCESSED_SOURCE
 
-CMakeFiles/torrey_lib.dir/src/hw2.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/torrey_lib.dir/src/hw2.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/dange/Documents/cse168/torrey-cuda/src/hw2.cpp -o CMakeFiles/torrey_lib.dir/src/hw2.cpp.s
+CMakeFiles/torrey_lib.dir/src/hw2.cu.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CUDA source to assembly CMakeFiles/torrey_lib.dir/src/hw2.cu.s"
+	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_CUDA_CREATE_ASSEMBLY_SOURCE
 
 CMakeFiles/torrey_lib.dir/src/hw3.cpp.o: CMakeFiles/torrey_lib.dir/flags.make
 CMakeFiles/torrey_lib.dir/src/hw3.cpp.o: ../src/hw3.cpp
@@ -181,19 +181,19 @@ CMakeFiles/torrey_lib.dir/src/hw4.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/torrey_lib.dir/src/hw4.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/dange/Documents/cse168/torrey-cuda/src/hw4.cpp -o CMakeFiles/torrey_lib.dir/src/hw4.cpp.s
 
-CMakeFiles/torrey_lib.dir/src/image.cpp.o: CMakeFiles/torrey_lib.dir/flags.make
-CMakeFiles/torrey_lib.dir/src/image.cpp.o: ../src/image.cpp
-CMakeFiles/torrey_lib.dir/src/image.cpp.o: CMakeFiles/torrey_lib.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/dange/Documents/cse168/torrey-cuda/cmake-build-default-wsl/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/torrey_lib.dir/src/image.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/torrey_lib.dir/src/image.cpp.o -MF CMakeFiles/torrey_lib.dir/src/image.cpp.o.d -o CMakeFiles/torrey_lib.dir/src/image.cpp.o -c /mnt/c/Users/dange/Documents/cse168/torrey-cuda/src/image.cpp
+CMakeFiles/torrey_lib.dir/src/image.cu.o: CMakeFiles/torrey_lib.dir/flags.make
+CMakeFiles/torrey_lib.dir/src/image.cu.o: ../src/image.cu
+CMakeFiles/torrey_lib.dir/src/image.cu.o: CMakeFiles/torrey_lib.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/dange/Documents/cse168/torrey-cuda/cmake-build-default-wsl/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CUDA object CMakeFiles/torrey_lib.dir/src/image.cu.o"
+	/usr/bin/nvcc -forward-unknown-to-host-compiler $(CUDA_DEFINES) $(CUDA_INCLUDES) $(CUDA_FLAGS) -MD -MT CMakeFiles/torrey_lib.dir/src/image.cu.o -MF CMakeFiles/torrey_lib.dir/src/image.cu.o.d -x cu -c /mnt/c/Users/dange/Documents/cse168/torrey-cuda/src/image.cu -o CMakeFiles/torrey_lib.dir/src/image.cu.o
 
-CMakeFiles/torrey_lib.dir/src/image.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/torrey_lib.dir/src/image.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/dange/Documents/cse168/torrey-cuda/src/image.cpp > CMakeFiles/torrey_lib.dir/src/image.cpp.i
+CMakeFiles/torrey_lib.dir/src/image.cu.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CUDA source to CMakeFiles/torrey_lib.dir/src/image.cu.i"
+	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_CUDA_CREATE_PREPROCESSED_SOURCE
 
-CMakeFiles/torrey_lib.dir/src/image.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/torrey_lib.dir/src/image.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/dange/Documents/cse168/torrey-cuda/src/image.cpp -o CMakeFiles/torrey_lib.dir/src/image.cpp.s
+CMakeFiles/torrey_lib.dir/src/image.cu.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CUDA source to assembly CMakeFiles/torrey_lib.dir/src/image.cu.s"
+	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_CUDA_CREATE_ASSEMBLY_SOURCE
 
 CMakeFiles/torrey_lib.dir/src/main.cu.o: CMakeFiles/torrey_lib.dir/flags.make
 CMakeFiles/torrey_lib.dir/src/main.cu.o: ../src/main.cu
@@ -209,19 +209,19 @@ CMakeFiles/torrey_lib.dir/src/main.cu.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CUDA source to assembly CMakeFiles/torrey_lib.dir/src/main.cu.s"
 	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_CUDA_CREATE_ASSEMBLY_SOURCE
 
-CMakeFiles/torrey_lib.dir/src/parallel.cpp.o: CMakeFiles/torrey_lib.dir/flags.make
-CMakeFiles/torrey_lib.dir/src/parallel.cpp.o: ../src/parallel.cpp
-CMakeFiles/torrey_lib.dir/src/parallel.cpp.o: CMakeFiles/torrey_lib.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/dange/Documents/cse168/torrey-cuda/cmake-build-default-wsl/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/torrey_lib.dir/src/parallel.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/torrey_lib.dir/src/parallel.cpp.o -MF CMakeFiles/torrey_lib.dir/src/parallel.cpp.o.d -o CMakeFiles/torrey_lib.dir/src/parallel.cpp.o -c /mnt/c/Users/dange/Documents/cse168/torrey-cuda/src/parallel.cpp
+CMakeFiles/torrey_lib.dir/src/parallel.cu.o: CMakeFiles/torrey_lib.dir/flags.make
+CMakeFiles/torrey_lib.dir/src/parallel.cu.o: ../src/parallel.cu
+CMakeFiles/torrey_lib.dir/src/parallel.cu.o: CMakeFiles/torrey_lib.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/dange/Documents/cse168/torrey-cuda/cmake-build-default-wsl/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CUDA object CMakeFiles/torrey_lib.dir/src/parallel.cu.o"
+	/usr/bin/nvcc -forward-unknown-to-host-compiler $(CUDA_DEFINES) $(CUDA_INCLUDES) $(CUDA_FLAGS) -MD -MT CMakeFiles/torrey_lib.dir/src/parallel.cu.o -MF CMakeFiles/torrey_lib.dir/src/parallel.cu.o.d -x cu -c /mnt/c/Users/dange/Documents/cse168/torrey-cuda/src/parallel.cu -o CMakeFiles/torrey_lib.dir/src/parallel.cu.o
 
-CMakeFiles/torrey_lib.dir/src/parallel.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/torrey_lib.dir/src/parallel.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/dange/Documents/cse168/torrey-cuda/src/parallel.cpp > CMakeFiles/torrey_lib.dir/src/parallel.cpp.i
+CMakeFiles/torrey_lib.dir/src/parallel.cu.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CUDA source to CMakeFiles/torrey_lib.dir/src/parallel.cu.i"
+	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_CUDA_CREATE_PREPROCESSED_SOURCE
 
-CMakeFiles/torrey_lib.dir/src/parallel.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/torrey_lib.dir/src/parallel.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/dange/Documents/cse168/torrey-cuda/src/parallel.cpp -o CMakeFiles/torrey_lib.dir/src/parallel.cpp.s
+CMakeFiles/torrey_lib.dir/src/parallel.cu.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CUDA source to assembly CMakeFiles/torrey_lib.dir/src/parallel.cu.s"
+	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_CUDA_CREATE_ASSEMBLY_SOURCE
 
 CMakeFiles/torrey_lib.dir/src/parse_obj.cpp.o: CMakeFiles/torrey_lib.dir/flags.make
 CMakeFiles/torrey_lib.dir/src/parse_obj.cpp.o: ../src/parse_obj.cpp
@@ -279,122 +279,122 @@ CMakeFiles/torrey_lib.dir/src/parse_serialized.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/torrey_lib.dir/src/parse_serialized.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/dange/Documents/cse168/torrey-cuda/src/parse_serialized.cpp -o CMakeFiles/torrey_lib.dir/src/parse_serialized.cpp.s
 
-CMakeFiles/torrey_lib.dir/src/print_scene.cpp.o: CMakeFiles/torrey_lib.dir/flags.make
-CMakeFiles/torrey_lib.dir/src/print_scene.cpp.o: ../src/print_scene.cpp
-CMakeFiles/torrey_lib.dir/src/print_scene.cpp.o: CMakeFiles/torrey_lib.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/dange/Documents/cse168/torrey-cuda/cmake-build-default-wsl/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/torrey_lib.dir/src/print_scene.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/torrey_lib.dir/src/print_scene.cpp.o -MF CMakeFiles/torrey_lib.dir/src/print_scene.cpp.o.d -o CMakeFiles/torrey_lib.dir/src/print_scene.cpp.o -c /mnt/c/Users/dange/Documents/cse168/torrey-cuda/src/print_scene.cpp
+CMakeFiles/torrey_lib.dir/src/print_scene.cu.o: CMakeFiles/torrey_lib.dir/flags.make
+CMakeFiles/torrey_lib.dir/src/print_scene.cu.o: ../src/print_scene.cu
+CMakeFiles/torrey_lib.dir/src/print_scene.cu.o: CMakeFiles/torrey_lib.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/dange/Documents/cse168/torrey-cuda/cmake-build-default-wsl/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CUDA object CMakeFiles/torrey_lib.dir/src/print_scene.cu.o"
+	/usr/bin/nvcc -forward-unknown-to-host-compiler $(CUDA_DEFINES) $(CUDA_INCLUDES) $(CUDA_FLAGS) -MD -MT CMakeFiles/torrey_lib.dir/src/print_scene.cu.o -MF CMakeFiles/torrey_lib.dir/src/print_scene.cu.o.d -x cu -c /mnt/c/Users/dange/Documents/cse168/torrey-cuda/src/print_scene.cu -o CMakeFiles/torrey_lib.dir/src/print_scene.cu.o
 
-CMakeFiles/torrey_lib.dir/src/print_scene.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/torrey_lib.dir/src/print_scene.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/dange/Documents/cse168/torrey-cuda/src/print_scene.cpp > CMakeFiles/torrey_lib.dir/src/print_scene.cpp.i
+CMakeFiles/torrey_lib.dir/src/print_scene.cu.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CUDA source to CMakeFiles/torrey_lib.dir/src/print_scene.cu.i"
+	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_CUDA_CREATE_PREPROCESSED_SOURCE
 
-CMakeFiles/torrey_lib.dir/src/print_scene.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/torrey_lib.dir/src/print_scene.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/dange/Documents/cse168/torrey-cuda/src/print_scene.cpp -o CMakeFiles/torrey_lib.dir/src/print_scene.cpp.s
+CMakeFiles/torrey_lib.dir/src/print_scene.cu.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CUDA source to assembly CMakeFiles/torrey_lib.dir/src/print_scene.cu.s"
+	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_CUDA_CREATE_ASSEMBLY_SOURCE
 
-CMakeFiles/torrey_lib.dir/src/scene.cpp.o: CMakeFiles/torrey_lib.dir/flags.make
-CMakeFiles/torrey_lib.dir/src/scene.cpp.o: ../src/scene.cpp
-CMakeFiles/torrey_lib.dir/src/scene.cpp.o: CMakeFiles/torrey_lib.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/dange/Documents/cse168/torrey-cuda/cmake-build-default-wsl/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/torrey_lib.dir/src/scene.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/torrey_lib.dir/src/scene.cpp.o -MF CMakeFiles/torrey_lib.dir/src/scene.cpp.o.d -o CMakeFiles/torrey_lib.dir/src/scene.cpp.o -c /mnt/c/Users/dange/Documents/cse168/torrey-cuda/src/scene.cpp
+CMakeFiles/torrey_lib.dir/src/scene.cu.o: CMakeFiles/torrey_lib.dir/flags.make
+CMakeFiles/torrey_lib.dir/src/scene.cu.o: ../src/scene.cu
+CMakeFiles/torrey_lib.dir/src/scene.cu.o: CMakeFiles/torrey_lib.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/dange/Documents/cse168/torrey-cuda/cmake-build-default-wsl/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CUDA object CMakeFiles/torrey_lib.dir/src/scene.cu.o"
+	/usr/bin/nvcc -forward-unknown-to-host-compiler $(CUDA_DEFINES) $(CUDA_INCLUDES) $(CUDA_FLAGS) -MD -MT CMakeFiles/torrey_lib.dir/src/scene.cu.o -MF CMakeFiles/torrey_lib.dir/src/scene.cu.o.d -x cu -c /mnt/c/Users/dange/Documents/cse168/torrey-cuda/src/scene.cu -o CMakeFiles/torrey_lib.dir/src/scene.cu.o
 
-CMakeFiles/torrey_lib.dir/src/scene.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/torrey_lib.dir/src/scene.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/dange/Documents/cse168/torrey-cuda/src/scene.cpp > CMakeFiles/torrey_lib.dir/src/scene.cpp.i
+CMakeFiles/torrey_lib.dir/src/scene.cu.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CUDA source to CMakeFiles/torrey_lib.dir/src/scene.cu.i"
+	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_CUDA_CREATE_PREPROCESSED_SOURCE
 
-CMakeFiles/torrey_lib.dir/src/scene.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/torrey_lib.dir/src/scene.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/dange/Documents/cse168/torrey-cuda/src/scene.cpp -o CMakeFiles/torrey_lib.dir/src/scene.cpp.s
+CMakeFiles/torrey_lib.dir/src/scene.cu.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CUDA source to assembly CMakeFiles/torrey_lib.dir/src/scene.cu.s"
+	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_CUDA_CREATE_ASSEMBLY_SOURCE
 
-CMakeFiles/torrey_lib.dir/src/shape.cpp.o: CMakeFiles/torrey_lib.dir/flags.make
-CMakeFiles/torrey_lib.dir/src/shape.cpp.o: ../src/shape.cpp
-CMakeFiles/torrey_lib.dir/src/shape.cpp.o: CMakeFiles/torrey_lib.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/dange/Documents/cse168/torrey-cuda/cmake-build-default-wsl/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/torrey_lib.dir/src/shape.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/torrey_lib.dir/src/shape.cpp.o -MF CMakeFiles/torrey_lib.dir/src/shape.cpp.o.d -o CMakeFiles/torrey_lib.dir/src/shape.cpp.o -c /mnt/c/Users/dange/Documents/cse168/torrey-cuda/src/shape.cpp
+CMakeFiles/torrey_lib.dir/src/shape.cu.o: CMakeFiles/torrey_lib.dir/flags.make
+CMakeFiles/torrey_lib.dir/src/shape.cu.o: ../src/shape.cu
+CMakeFiles/torrey_lib.dir/src/shape.cu.o: CMakeFiles/torrey_lib.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/dange/Documents/cse168/torrey-cuda/cmake-build-default-wsl/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CUDA object CMakeFiles/torrey_lib.dir/src/shape.cu.o"
+	/usr/bin/nvcc -forward-unknown-to-host-compiler $(CUDA_DEFINES) $(CUDA_INCLUDES) $(CUDA_FLAGS) -MD -MT CMakeFiles/torrey_lib.dir/src/shape.cu.o -MF CMakeFiles/torrey_lib.dir/src/shape.cu.o.d -x cu -c /mnt/c/Users/dange/Documents/cse168/torrey-cuda/src/shape.cu -o CMakeFiles/torrey_lib.dir/src/shape.cu.o
 
-CMakeFiles/torrey_lib.dir/src/shape.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/torrey_lib.dir/src/shape.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/dange/Documents/cse168/torrey-cuda/src/shape.cpp > CMakeFiles/torrey_lib.dir/src/shape.cpp.i
+CMakeFiles/torrey_lib.dir/src/shape.cu.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CUDA source to CMakeFiles/torrey_lib.dir/src/shape.cu.i"
+	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_CUDA_CREATE_PREPROCESSED_SOURCE
 
-CMakeFiles/torrey_lib.dir/src/shape.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/torrey_lib.dir/src/shape.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/dange/Documents/cse168/torrey-cuda/src/shape.cpp -o CMakeFiles/torrey_lib.dir/src/shape.cpp.s
+CMakeFiles/torrey_lib.dir/src/shape.cu.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CUDA source to assembly CMakeFiles/torrey_lib.dir/src/shape.cu.s"
+	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_CUDA_CREATE_ASSEMBLY_SOURCE
 
-CMakeFiles/torrey_lib.dir/src/texture.cpp.o: CMakeFiles/torrey_lib.dir/flags.make
-CMakeFiles/torrey_lib.dir/src/texture.cpp.o: ../src/texture.cpp
-CMakeFiles/torrey_lib.dir/src/texture.cpp.o: CMakeFiles/torrey_lib.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/dange/Documents/cse168/torrey-cuda/cmake-build-default-wsl/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/torrey_lib.dir/src/texture.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/torrey_lib.dir/src/texture.cpp.o -MF CMakeFiles/torrey_lib.dir/src/texture.cpp.o.d -o CMakeFiles/torrey_lib.dir/src/texture.cpp.o -c /mnt/c/Users/dange/Documents/cse168/torrey-cuda/src/texture.cpp
+CMakeFiles/torrey_lib.dir/src/texture.cu.o: CMakeFiles/torrey_lib.dir/flags.make
+CMakeFiles/torrey_lib.dir/src/texture.cu.o: ../src/texture.cu
+CMakeFiles/torrey_lib.dir/src/texture.cu.o: CMakeFiles/torrey_lib.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/dange/Documents/cse168/torrey-cuda/cmake-build-default-wsl/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CUDA object CMakeFiles/torrey_lib.dir/src/texture.cu.o"
+	/usr/bin/nvcc -forward-unknown-to-host-compiler $(CUDA_DEFINES) $(CUDA_INCLUDES) $(CUDA_FLAGS) -MD -MT CMakeFiles/torrey_lib.dir/src/texture.cu.o -MF CMakeFiles/torrey_lib.dir/src/texture.cu.o.d -x cu -c /mnt/c/Users/dange/Documents/cse168/torrey-cuda/src/texture.cu -o CMakeFiles/torrey_lib.dir/src/texture.cu.o
 
-CMakeFiles/torrey_lib.dir/src/texture.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/torrey_lib.dir/src/texture.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/dange/Documents/cse168/torrey-cuda/src/texture.cpp > CMakeFiles/torrey_lib.dir/src/texture.cpp.i
+CMakeFiles/torrey_lib.dir/src/texture.cu.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CUDA source to CMakeFiles/torrey_lib.dir/src/texture.cu.i"
+	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_CUDA_CREATE_PREPROCESSED_SOURCE
 
-CMakeFiles/torrey_lib.dir/src/texture.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/torrey_lib.dir/src/texture.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/dange/Documents/cse168/torrey-cuda/src/texture.cpp -o CMakeFiles/torrey_lib.dir/src/texture.cpp.s
+CMakeFiles/torrey_lib.dir/src/texture.cu.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CUDA source to assembly CMakeFiles/torrey_lib.dir/src/texture.cu.s"
+	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_CUDA_CREATE_ASSEMBLY_SOURCE
 
-CMakeFiles/torrey_lib.dir/src/transform.cpp.o: CMakeFiles/torrey_lib.dir/flags.make
-CMakeFiles/torrey_lib.dir/src/transform.cpp.o: ../src/transform.cpp
-CMakeFiles/torrey_lib.dir/src/transform.cpp.o: CMakeFiles/torrey_lib.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/dange/Documents/cse168/torrey-cuda/cmake-build-default-wsl/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/torrey_lib.dir/src/transform.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/torrey_lib.dir/src/transform.cpp.o -MF CMakeFiles/torrey_lib.dir/src/transform.cpp.o.d -o CMakeFiles/torrey_lib.dir/src/transform.cpp.o -c /mnt/c/Users/dange/Documents/cse168/torrey-cuda/src/transform.cpp
+CMakeFiles/torrey_lib.dir/src/transform.cu.o: CMakeFiles/torrey_lib.dir/flags.make
+CMakeFiles/torrey_lib.dir/src/transform.cu.o: ../src/transform.cu
+CMakeFiles/torrey_lib.dir/src/transform.cu.o: CMakeFiles/torrey_lib.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/dange/Documents/cse168/torrey-cuda/cmake-build-default-wsl/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CUDA object CMakeFiles/torrey_lib.dir/src/transform.cu.o"
+	/usr/bin/nvcc -forward-unknown-to-host-compiler $(CUDA_DEFINES) $(CUDA_INCLUDES) $(CUDA_FLAGS) -MD -MT CMakeFiles/torrey_lib.dir/src/transform.cu.o -MF CMakeFiles/torrey_lib.dir/src/transform.cu.o.d -x cu -c /mnt/c/Users/dange/Documents/cse168/torrey-cuda/src/transform.cu -o CMakeFiles/torrey_lib.dir/src/transform.cu.o
 
-CMakeFiles/torrey_lib.dir/src/transform.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/torrey_lib.dir/src/transform.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/dange/Documents/cse168/torrey-cuda/src/transform.cpp > CMakeFiles/torrey_lib.dir/src/transform.cpp.i
+CMakeFiles/torrey_lib.dir/src/transform.cu.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CUDA source to CMakeFiles/torrey_lib.dir/src/transform.cu.i"
+	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_CUDA_CREATE_PREPROCESSED_SOURCE
 
-CMakeFiles/torrey_lib.dir/src/transform.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/torrey_lib.dir/src/transform.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/dange/Documents/cse168/torrey-cuda/src/transform.cpp -o CMakeFiles/torrey_lib.dir/src/transform.cpp.s
+CMakeFiles/torrey_lib.dir/src/transform.cu.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CUDA source to assembly CMakeFiles/torrey_lib.dir/src/transform.cu.s"
+	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_CUDA_CREATE_ASSEMBLY_SOURCE
 
 # Object files for target torrey_lib
 torrey_lib_OBJECTS = \
 "CMakeFiles/torrey_lib.dir/src/3rdparty/pugixml.cpp.o" \
 "CMakeFiles/torrey_lib.dir/src/bvh.cpp.o" \
-"CMakeFiles/torrey_lib.dir/src/camera.cpp.o" \
-"CMakeFiles/torrey_lib.dir/src/compute_normals.cpp.o" \
+"CMakeFiles/torrey_lib.dir/src/camera.cu.o" \
+"CMakeFiles/torrey_lib.dir/src/compute_normals.cu.o" \
 "CMakeFiles/torrey_lib.dir/src/hw1.cu.o" \
-"CMakeFiles/torrey_lib.dir/src/hw2.cpp.o" \
+"CMakeFiles/torrey_lib.dir/src/hw2.cu.o" \
 "CMakeFiles/torrey_lib.dir/src/hw3.cpp.o" \
 "CMakeFiles/torrey_lib.dir/src/hw4.cpp.o" \
-"CMakeFiles/torrey_lib.dir/src/image.cpp.o" \
+"CMakeFiles/torrey_lib.dir/src/image.cu.o" \
 "CMakeFiles/torrey_lib.dir/src/main.cu.o" \
-"CMakeFiles/torrey_lib.dir/src/parallel.cpp.o" \
+"CMakeFiles/torrey_lib.dir/src/parallel.cu.o" \
 "CMakeFiles/torrey_lib.dir/src/parse_obj.cpp.o" \
 "CMakeFiles/torrey_lib.dir/src/parse_ply.cpp.o" \
 "CMakeFiles/torrey_lib.dir/src/parse_scene.cpp.o" \
 "CMakeFiles/torrey_lib.dir/src/parse_serialized.cpp.o" \
-"CMakeFiles/torrey_lib.dir/src/print_scene.cpp.o" \
-"CMakeFiles/torrey_lib.dir/src/scene.cpp.o" \
-"CMakeFiles/torrey_lib.dir/src/shape.cpp.o" \
-"CMakeFiles/torrey_lib.dir/src/texture.cpp.o" \
-"CMakeFiles/torrey_lib.dir/src/transform.cpp.o"
+"CMakeFiles/torrey_lib.dir/src/print_scene.cu.o" \
+"CMakeFiles/torrey_lib.dir/src/scene.cu.o" \
+"CMakeFiles/torrey_lib.dir/src/shape.cu.o" \
+"CMakeFiles/torrey_lib.dir/src/texture.cu.o" \
+"CMakeFiles/torrey_lib.dir/src/transform.cu.o"
 
 # External object files for target torrey_lib
 torrey_lib_EXTERNAL_OBJECTS =
 
 libtorrey_lib.a: CMakeFiles/torrey_lib.dir/src/3rdparty/pugixml.cpp.o
 libtorrey_lib.a: CMakeFiles/torrey_lib.dir/src/bvh.cpp.o
-libtorrey_lib.a: CMakeFiles/torrey_lib.dir/src/camera.cpp.o
-libtorrey_lib.a: CMakeFiles/torrey_lib.dir/src/compute_normals.cpp.o
+libtorrey_lib.a: CMakeFiles/torrey_lib.dir/src/camera.cu.o
+libtorrey_lib.a: CMakeFiles/torrey_lib.dir/src/compute_normals.cu.o
 libtorrey_lib.a: CMakeFiles/torrey_lib.dir/src/hw1.cu.o
-libtorrey_lib.a: CMakeFiles/torrey_lib.dir/src/hw2.cpp.o
+libtorrey_lib.a: CMakeFiles/torrey_lib.dir/src/hw2.cu.o
 libtorrey_lib.a: CMakeFiles/torrey_lib.dir/src/hw3.cpp.o
 libtorrey_lib.a: CMakeFiles/torrey_lib.dir/src/hw4.cpp.o
-libtorrey_lib.a: CMakeFiles/torrey_lib.dir/src/image.cpp.o
+libtorrey_lib.a: CMakeFiles/torrey_lib.dir/src/image.cu.o
 libtorrey_lib.a: CMakeFiles/torrey_lib.dir/src/main.cu.o
-libtorrey_lib.a: CMakeFiles/torrey_lib.dir/src/parallel.cpp.o
+libtorrey_lib.a: CMakeFiles/torrey_lib.dir/src/parallel.cu.o
 libtorrey_lib.a: CMakeFiles/torrey_lib.dir/src/parse_obj.cpp.o
 libtorrey_lib.a: CMakeFiles/torrey_lib.dir/src/parse_ply.cpp.o
 libtorrey_lib.a: CMakeFiles/torrey_lib.dir/src/parse_scene.cpp.o
 libtorrey_lib.a: CMakeFiles/torrey_lib.dir/src/parse_serialized.cpp.o
-libtorrey_lib.a: CMakeFiles/torrey_lib.dir/src/print_scene.cpp.o
-libtorrey_lib.a: CMakeFiles/torrey_lib.dir/src/scene.cpp.o
-libtorrey_lib.a: CMakeFiles/torrey_lib.dir/src/shape.cpp.o
-libtorrey_lib.a: CMakeFiles/torrey_lib.dir/src/texture.cpp.o
-libtorrey_lib.a: CMakeFiles/torrey_lib.dir/src/transform.cpp.o
+libtorrey_lib.a: CMakeFiles/torrey_lib.dir/src/print_scene.cu.o
+libtorrey_lib.a: CMakeFiles/torrey_lib.dir/src/scene.cu.o
+libtorrey_lib.a: CMakeFiles/torrey_lib.dir/src/shape.cu.o
+libtorrey_lib.a: CMakeFiles/torrey_lib.dir/src/texture.cu.o
+libtorrey_lib.a: CMakeFiles/torrey_lib.dir/src/transform.cu.o
 libtorrey_lib.a: CMakeFiles/torrey_lib.dir/build.make
 libtorrey_lib.a: CMakeFiles/torrey_lib.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/mnt/c/Users/dange/Documents/cse168/torrey-cuda/cmake-build-default-wsl/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Linking CXX static library libtorrey_lib.a"

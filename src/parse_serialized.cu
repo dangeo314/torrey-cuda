@@ -1,4 +1,4 @@
-#include "parse_serialized.h"
+#include "parse_serialized.cuh"
 #include "3rdparty/miniz.h"
 #include "flexception.cuh"
 #include "transform.cuh"

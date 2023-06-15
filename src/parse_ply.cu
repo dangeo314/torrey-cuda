@@ -1,4 +1,4 @@
-#include "parse_ply.h"
+#include "parse_ply.cuh"
 #include "flexception.cuh"
 #include "transform.cuh"
 #define TINYPLY_IMPLEMENTATION

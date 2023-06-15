@@ -1,4 +1,4 @@
-#include "parse_obj.h"
+#include "parse_obj.cuh"
 #include "flexception.cuh"
 #include "transform.cuh"
 

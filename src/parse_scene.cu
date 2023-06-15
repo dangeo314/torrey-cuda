@@ -2,9 +2,9 @@
 #include "3rdparty/pugixml.hpp"
 #include "compute_normals.cuh"
 #include "flexception.cuh"
-#include "parse_obj.h"
-#include "parse_ply.h"
-#include "parse_serialized.h"
+#include "parse_obj.cuh"
+#include "parse_ply.cuh"
+#include "parse_serialized.cuh"
 #include "transform.cuh"
 #include <map>
 #include <regex>
