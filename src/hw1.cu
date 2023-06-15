@@ -3,7 +3,7 @@
 #include "pcg.h"
 #include "sphere.h"
 #include "ray.h"
-#include "vector.h"
+#include "vector.cuh"
 #include "hw1_scenes.h"
 
 using namespace hw1;
@@ -68,11 +68,13 @@ Image3 hw_1_1(const std::vector<std::string> &/*params*/) {
     return img;
 }
 
-Image3 hw_1_2(const std::vector<std::string> &/*params*/) {
+
+/* Homework 1.2
+Image3 hw_1_2(const std::vector<std::string> & params) {
     // Homework 1.2: intersect the rays generated from hw_1_1
     // with a unit sphere located at (0, 0, -2)
 
-    Image3 img(640 /* width */, 480 /* height */);
+    Image3 img(640, 480);
     Sphere sph{Vector3{0, 0, -2}, Real(1), -1};
 
     int w = img.width;
@@ -109,7 +111,9 @@ Image3 hw_1_2(const std::vector<std::string> &/*params*/) {
 
     return img;
 }
+*/
 
+/* Homework 1.3
 Image3 hw_1_3(const std::vector<std::string> &params) {
     // Homework 1.3: add camera control to hw_1_2. 
     // We will use a look at transform:
@@ -147,7 +151,7 @@ Image3 hw_1_3(const std::vector<std::string> &params) {
         }
     }
 
-    Image3 img(640 /* width */, 480 /* height */);
+    Image3 img(640, 480);
     Sphere sph{Vector3{0, 0, -2}, Real(1), -1};
 
     int w = img.width;
@@ -186,7 +190,9 @@ Image3 hw_1_3(const std::vector<std::string> &params) {
 
     return img;
 }
+*/
 
+/* Homework 1.4
 Image3 hw_1_4(const std::vector<std::string> &params) {
     // Homework 1.4: render the scenes defined in hw1_scenes.h
     // output their diffuse color directly.
@@ -196,7 +202,7 @@ Image3 hw_1_4(const std::vector<std::string> &params) {
 
     int scene_id = std::stoi(params[0]);
 
-    Image3 img(640 /* width */, 480 /* height */);
+    Image3 img(640, 480);
     const Scene &scene = hw1_scenes[scene_id];
     const Camera &cam = scene.camera;
 
@@ -237,7 +243,9 @@ Image3 hw_1_4(const std::vector<std::string> &params) {
     }
     return img;
 }
+*/
 
+/* Homework 1.5 
 Image3 hw_1_5(const std::vector<std::string> &params) {
     // Homework 1.5: render the scenes defined in hw1_scenes.h,
     // light them using the point lights in the scene.
@@ -246,7 +254,7 @@ Image3 hw_1_5(const std::vector<std::string> &params) {
     }
 
     int scene_id = std::stoi(params[0]);
-    Image3 img(640 /* width */, 480 /* height */);
+    Image3 img(640, 480);
     const Scene &scene = hw1_scenes[scene_id];
     const Camera &cam = scene.camera;
 
@@ -309,7 +317,9 @@ Image3 hw_1_5(const std::vector<std::string> &params) {
     }
     return img;
 }
+*/
 
+/* Homework 1.6: add antialiasing to homework 1.5 
 Image3 hw_1_6(const std::vector<std::string> &params) {
     // Homework 1.6: add antialiasing to homework 1.5
     if (params.size() == 0) {
@@ -326,7 +336,7 @@ Image3 hw_1_6(const std::vector<std::string> &params) {
         }
     }
 
-    Image3 img(160 /* width */, 120 /* height */);
+    Image3 img(160, 120);
 
     const Scene &scene = hw1_scenes[scene_id];
     const Camera &cam = scene.camera;
@@ -400,7 +410,9 @@ Image3 hw_1_6(const std::vector<std::string> &params) {
     }
     return img;
 }
+*/
 
+/* Radiance function for Homework 1.7
 Vector3 radiance(const Scene &scene, Ray ray) {
     Vector3 color = Vector3{0.5, 0.5, 0.5};
     bool hit = false;
@@ -439,7 +451,9 @@ Vector3 radiance(const Scene &scene, Ray ray) {
     }
     return color;
 }
+*/
 
+/* Homework 1.7: add mirror materials to homework 1.6
 Image3 hw_1_7(const std::vector<std::string> &params) {
     // Homework 1.7: add mirror materials to homework 1.6
     if (params.size() == 0) {
@@ -456,7 +470,7 @@ Image3 hw_1_7(const std::vector<std::string> &params) {
         }
     }
 
-    Image3 img(640 /* width */, 480 /* height */);
+    Image3 img(640, 480);
 
     const Scene &scene = hw1_scenes[scene_id];
     const Camera &cam = scene.camera;
@@ -501,7 +515,9 @@ Image3 hw_1_7(const std::vector<std::string> &params) {
     }
     return img;
 }
+*/
 
+/* Homework 1.8: parallelize HW 1.7
 Image3 hw_1_8(const std::vector<std::string> &params) {
     // Homework 1.8: parallelize HW 1.7
     if (params.size() == 0) {
@@ -518,7 +534,7 @@ Image3 hw_1_8(const std::vector<std::string> &params) {
         }
     }
 
-    Image3 img(1280 /* width */, 960 /* height */);
+    Image3 img(1280, 960);
 
     const Scene &scene = hw1_scenes[scene_id];
     const Camera &cam = scene.camera;
@@ -569,3 +585,4 @@ Image3 hw_1_8(const std::vector<std::string> &params) {
 
     return img;
 }
+*/

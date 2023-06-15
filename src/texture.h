@@ -1,7 +1,7 @@
 #pragma once
 
 #include "torrey.h"
-#include "vector.h"
+#include "vector.cuh"
 #include "image.h"
 #include <variant>
 #include "perlin.h"

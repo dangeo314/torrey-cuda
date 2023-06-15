@@ -1,7 +1,7 @@
 #pragma once
 
 #include "torrey.h"
-#include "vector.h"
+#include "vector.cuh"
 
 struct Ray {
     Vector3 org, dir;

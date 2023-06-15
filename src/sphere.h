@@ -4,7 +4,7 @@
 #include "hw1_scenes.h"
 #include "intersection.h"
 #include "ray.h"
-#include "vector.h"
+#include "vector.cuh"
 #include <optional>
 
 /// Numerically stable quadratic equation solver at^2 + bt + c = 0

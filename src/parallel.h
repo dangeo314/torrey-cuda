@@ -1,6 +1,6 @@
 #pragma once
 
-#include "vector.h"
+#include "vector.cuh"
 
 #include <mutex>
 #include <functional>

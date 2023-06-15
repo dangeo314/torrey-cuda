@@ -1,7 +1,7 @@
 #pragma once
 
 #include "torrey.h"
-#include "vector.h"
+#include "vector.cuh"
 #include "intersection.h"
 #include <optional>
 #include <variant>

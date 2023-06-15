@@ -2,7 +2,7 @@
 
 #include "torrey.h"
 #include "matrix.h"
-#include "vector.h"
+#include "vector.cuh"
 
 /// A collection of 3D transformations.
 Matrix4x4 translate(const Vector3 &delta);

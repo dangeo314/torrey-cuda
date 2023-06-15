@@ -1,7 +1,7 @@
 #pragma once
 
 #include "torrey.h"
-#include "vector.h"
+#include "vector.cuh"
 
 /// Row-major matrix
 template <typename T>

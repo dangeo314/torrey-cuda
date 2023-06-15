@@ -2,7 +2,7 @@
 
 #include "torrey.h"
 #include "texture.h"
-#include "vector.h"
+#include "vector.cuh"
 #include <variant>
 
 struct Diffuse {

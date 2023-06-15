@@ -57,7 +57,7 @@ set(SRCS src/3rdparty/miniz.h
          src/perlin.h
          src/torrey.h
          src/transform.h
-         src/vector.h
+         src/vector.cuh
          src/bvh.cpp
          src/camera.cpp
          src/compute_normals.cpp
