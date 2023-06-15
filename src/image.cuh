@@ -3,6 +3,7 @@
 #include <string>
 #include <cstring>
 #include <vector>
+#include <vector.cuh>
 
 /// A N-channel image stored in a contiguous vector
 /// The storage format is HWC -- outer dimension is height
