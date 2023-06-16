@@ -16,6 +16,9 @@ struct TVector2 {
     CUDA_HOSTDEV TVector2() {}
 
     template <typename T2>
+    CUDA_HOSTDEV TVector2(T2 x) : x(T(x)), y(T(x)) {}
+
+    template <typename T2>
     CUDA_HOSTDEV TVector2(T2 x, T2 y) : x(T(x)), y(T(y)) {}
 
     template <typename T2>
@@ -35,6 +38,9 @@ struct TVector2 {
 template <typename T>
 struct TVector3 {
     CUDA_HOSTDEV TVector3() {}
+    
+    template <typename T2>
+    CUDA_HOSTDEV TVector3(T2 x) : x(T(x)), y(T(x)), z(T(x)) {}
 
     template <typename T2>
     CUDA_HOSTDEV TVector3(T2 x, T2 y, T2 z) : x(T(x)), y(T(y)), z(T(z)) {}

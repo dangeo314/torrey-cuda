@@ -1,5 +1,5 @@
 #include "parse_obj.cuh"
-#include "flexception.cuh"
+#include "flexception.h"
 #include "transform.cuh"
 
 #include <fstream>

@@ -16,6 +16,10 @@ struct Image {
         memset(data.data(), 0, sizeof(T) * data.size());
     }
 
+    Image(T* buffer, int w, int h) : width(w), height(h) {
+        data.assign(buffer, buffer + w * h );
+    }
+
     T &operator()(int x) {
         return data[x];
     }
@@ -55,20 +59,19 @@ Image3 imread3(const fs::path &filename);
 /// Supported formats: PFM & exr
 void imwrite(const fs::path &filename, const Image3 &image);
 
-/*
+
 inline Image3 to_image3(const Image1 &img) {
     Image3 out(img.width, img.height);
     std::transform(img.data.cbegin(), img.data.cend(), out.data.begin(),
         [] (Real v) {return Vector3(v, v, v);});
     return out;
 }
-*/
 
-/*
+
+
 inline Image1 to_image1(const Image3 &img) {
     Image1 out(img.width, img.height);
     std::transform(img.data.cbegin(), img.data.cend(), out.data.begin(),
         [] (const Vector3 &v) {return average(v);});
     return out;
 }
-*/

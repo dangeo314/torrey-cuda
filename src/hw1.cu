@@ -6,9 +6,21 @@
 #include "vector.cuh"
 #include "hw1_scenes.cuh"
 
+#define checkCudaErrors(val) check_cuda( (val), #val, __FILE__, __LINE__ )
+
+void check_cuda(cudaError_t result, char const *const func, const char *const file, int const line) {
+    if (result) {
+        std::cerr << "CUDA error = " << static_cast<unsigned int>(result) << " at " <<
+            file << ":" << line << " '" << func << "' \n";
+        // Make sure we call CUDA Device Reset before exiting
+        cudaDeviceReset();
+        exit(99);
+    }
+}
+
 using namespace hw1;
 
-__global__ void generate_parallel_image(Image3* img, int w, int h, Vector3 origin, Vector3 horizontal, Vector3 vertical, Vector3 top_left_corner) {
+__global__ void generate_parallel_image(Vector3* img, int w, int h, Vector3 origin, Vector3 horizontal, Vector3 vertical, Vector3 top_left_corner) {
     int x = threadIdx.x + blockIdx.x * blockDim.x;
     int y = threadIdx.y + blockIdx.y * blockDim.y;
 
@@ -17,7 +29,7 @@ __global__ void generate_parallel_image(Image3* img, int w, int h, Vector3 origi
         Real v = (y + 0.5f) / h;
         Vector3 pixel_color = normalize(top_left_corner + u * horizontal - v * vertical - origin);
 
-        (*img)(x, y) = pixel_color;
+        img[y*w+x] = pixel_color;
     }
 }
 
@@ -26,10 +38,8 @@ Image3 hw_1_1(const std::vector<std::string> &/*params*/) {
     // The camera is positioned at (0, 0, 0), facing towards (0, 0, -1),
     // with an up vector (0, 1, 0) and a vertical field of view of 90 degree.
 
-    Image3 img(640 /* width */, 480 /* height */);
-
-    int w = img.width;
-    int h = img.height;
+    int w = 640;
+    int h = 480;
 
     Real aspect_ratio = Real(w) / Real(h);
     Real viewport_height = 2.0;
@@ -43,9 +53,11 @@ Image3 hw_1_1(const std::vector<std::string> &/*params*/) {
         origin - horizontal / Real(2) + vertical / Real(2) -
         Vector3{Real(0), Real(0), focal_length};
 
+    Vector3* img;
+    size_t size = w * h * sizeof(Vector3);
+
     // Assuming Vector3 is a struct with three float members (x, y, z)
-    Image3* img_device;
-    cudaMalloc(&img_device, w * h * sizeof(Vector3));
+    checkCudaErrors(cudaMallocManaged(&img, size));
 
     // Assuming that 'blockSize' is a dim3 type specifying the number of threads per block
     // and 'numBlocks' is a dim3 type specifying the number of blocks.
@@ -53,19 +65,12 @@ Image3 hw_1_1(const std::vector<std::string> &/*params*/) {
     dim3 blockSize(16, 16);
     dim3 numBlocks((w + blockSize.x - 1) / blockSize.x, (h + blockSize.y - 1) / blockSize.y);
 
-    generate_parallel_image<<<numBlocks, blockSize >>>(img_device, w, h, origin, horizontal, vertical, top_left_corner);
+    generate_parallel_image<<<numBlocks, blockSize >>>(img, w, h, origin, horizontal, vertical, top_left_corner);
 
+    // cudaMemCpy from DeviceImage back to HostImage
     cudaDeviceSynchronize();
 
-    // Copy the results back to CPU memory.
-    Vector3* img_host = new Vector3[w * h];
-    cudaMemcpy(img_host, img_device, w * h * sizeof(Vector3), cudaMemcpyDeviceToHost);
-
-    // Now, 'img_host' contains the result image data.
-
-    cudaFree(img_device);
-    delete[] img_host;
-    return img;
+    return Image3(img, w,h);
 }
 
 
@@ -74,7 +79,7 @@ Image3 hw_1_2(const std::vector<std::string> & params) {
     // Homework 1.2: intersect the rays generated from hw_1_1
     // with a unit sphere located at (0, 0, -2)
 
-    Image3 img(640, 480);
+    // Image3 img(640, 480);
     Sphere sph{Vector3{0, 0, -2}, Real(1), -1};
 
     int w = img.width;
@@ -112,6 +117,7 @@ Image3 hw_1_2(const std::vector<std::string> & params) {
     return img;
 }
 */
+
 
 /* Homework 1.3
 Image3 hw_1_3(const std::vector<std::string> &params) {
@@ -192,7 +198,6 @@ Image3 hw_1_3(const std::vector<std::string> &params) {
 }
 */
 
-/* Homework 1.4
 Image3 hw_1_4(const std::vector<std::string> &params) {
     // Homework 1.4: render the scenes defined in hw1_scenes.h
     // output their diffuse color directly.
@@ -243,7 +248,7 @@ Image3 hw_1_4(const std::vector<std::string> &params) {
     }
     return img;
 }
-*/
+
 
 /* Homework 1.5 
 Image3 hw_1_5(const std::vector<std::string> &params) {

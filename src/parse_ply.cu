@@ -1,5 +1,5 @@
 #include "parse_ply.cuh"
-#include "flexception.cuh"
+#include "flexception.h"
 #include "transform.cuh"
 #define TINYPLY_IMPLEMENTATION
 #include "3rdparty/tinyply.h"

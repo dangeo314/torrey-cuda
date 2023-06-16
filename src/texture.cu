@@ -1,5 +1,5 @@
 #include "texture.cuh"
-#include "flexception.cuh"
+#include "flexception.h"
 
 Vector3 eval(const Texture &texture, const Vector2 &uv) {
     if (auto *constant = std::get_if<ConstantTexture>(&texture)) {

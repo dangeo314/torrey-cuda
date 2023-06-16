@@ -1,7 +1,7 @@
 #include "parse_scene.cuh"
 #include "3rdparty/pugixml.hpp"
 #include "compute_normals.cuh"
-#include "flexception.cuh"
+#include "flexception.h"
 #include "parse_obj.cuh"
 #include "parse_ply.cuh"
 #include "parse_serialized.cuh"

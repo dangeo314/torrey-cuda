@@ -4,7 +4,7 @@
 #define TINYEXR_USE_MINIZ 1
 #define TINYEXR_IMPLEMENTATION
 #include "3rdparty/tinyexr.h"
-#include "flexception.cuh"
+#include "flexception.h"
 #include <algorithm>
 #include <fstream>
 

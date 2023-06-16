@@ -1,1 +1,0 @@
-/usr/bin/c++ -O2 -g -DNDEBUG CMakeFiles/torrey.dir/src/main.cu.o -o torrey   -L/usr/lib/x86_64-linux-gnu/stubs  libtorrey_lib.a -lcudadevrt -lcudart_static -lrt -lpthread -ldl 

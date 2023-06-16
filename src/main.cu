@@ -1,7 +1,7 @@
 #include "hw1.cuh"
-#include "hw2.cuh"
-#include "hw3.cuh"
-#include "hw4.cuh"
+//#include "hw2.cuh"
+//#include "hw3.cuh"
+//#include "hw4.cuh"
 #include "image.cuh"
 #include "parallel.cuh"
 #include <vector>
@@ -27,6 +27,8 @@ int main(int argc, char *argv[]) {
     if (hw_num == "1_1") {
         Image3 img = hw_1_1(parameters);
         imwrite("hw_1_1.exr", img);
+    }
+    /*
     } else if (hw_num == "1_2") {
         Image3 img = hw_1_2(parameters);
         imwrite("hw_1_2.exr", img);
@@ -88,6 +90,7 @@ int main(int argc, char *argv[]) {
         Image3 img = hw_4_3(parameters);
         imwrite("hw_4_3.exr", img);
     }
+    */
 
     parallel_cleanup();
 

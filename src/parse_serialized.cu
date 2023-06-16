@@ -1,6 +1,6 @@
 #include "parse_serialized.cuh"
 #include "3rdparty/miniz.h"
-#include "flexception.cuh"
+#include "flexception.h"
 #include "transform.cuh"
 #include <fstream>
 #include <iostream>

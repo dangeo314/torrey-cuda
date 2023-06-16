@@ -1,5 +1,5 @@
 #include "scene.cuh"
-#include "flexception.cuh"
+#include "flexception.h"
 #include "image.cuh"
 #include "ray.cuh"
 #include "texture.cuh"
