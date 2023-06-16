@@ -1,4 +1,7 @@
 # torrey
+
+UPDATES SINCE WRITEUP:
+We fixed the polymorphism, now are running into other compile errors.
 UCSD CSE 168 renderer
 https://cseweb.ucsd.edu/~tzli/cse168/
 
@@ -27,6 +30,9 @@ This will generate an image "hw1_1.exr".
 To view the image, use [hdrview](https://github.com/wkjarosz/hdrview), or [tev](https://github.com/Tom94/tev).
 
 # Acknowledgement
+We used this as reference: 
+[https://developer.nvidia.com/blog/accelerated-ray-tracing-cuda/](https://developer.nvidia.com/blog/accelerated-ray-tracing-cuda/)
+
 The renderer is heavily inspired by [pbrt](https://pbr-book.org/), [mitsuba](http://www.mitsuba-renderer.org/index_old.html), [the ray tracing series](https://raytracing.github.io/), and [darts](https://cs87-dartmouth.github.io/Fall2022/darts-overview.html).
 
 We use [pugixml](https://pugixml.org/) to parse XML files.
