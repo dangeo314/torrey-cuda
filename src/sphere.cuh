@@ -1,6 +1,6 @@
 #pragma once
 
-#include "torrey.h"
+#include "torrey.cuh"
 #include "hw1_scenes.cuh"
 #include "intersection.cuh"
 #include "ray.cuh"
@@ -10,7 +10,7 @@
 /// Numerically stable quadratic equation solver at^2 + bt + c = 0
 /// See https://people.csail.mit.edu/bkph/articles/Quadratics.pdf
 /// returns false when it can't find solutions.
-inline bool solve_quadratic(Real a, Real b, Real c, Real *t0, Real *t1) {
+__host__ __device__ inline bool solve_quadratic(Real a, Real b, Real c, Real *t0, Real *t1) {
     // Degenerated case
     if (a == 0) {
         if (b == 0) {
@@ -35,7 +35,7 @@ inline bool solve_quadratic(Real a, Real b, Real c, Real *t0, Real *t1) {
     return true;
 }
 
-inline std::optional<Intersection> intersect(const hw1::Sphere &sph, const Ray &ray) {
+__host__ __device__ inline Intersection intersect(const hw1::Sphere &sph, const Ray &ray) {
     // Our sphere is ||p - x||^2 = r^2
     // substitute x = o + d * t, we want to solve for t
     // ||p - (o + d * t)||^2 = r^2
@@ -75,11 +75,11 @@ inline std::optional<Intersection> intersect(const hw1::Sphere &sph, const Ray &
     return {};
 }
 
-inline bool occluded(const hw1::Sphere &sph, const Ray &ray) {
-    return bool(intersect(sph, ray));
+__host__ __device__ inline bool occluded(const hw1::Sphere &sph, const Ray &ray) {
+    return bool(intersect(sph, ray).distance < infinity<Real>());
 }
 
-inline bool occluded(const hw1::Scene &scene, const Ray &ray) {
+__host__ __device__ inline bool occluded(const hw1::Scene &scene, const Ray &ray) {
     for (const hw1::Sphere &sph : scene.shapes) {
         if (occluded(sph, ray)) {
             return true;

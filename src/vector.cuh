@@ -7,7 +7,7 @@
 
 #pragma once
 
-#include "torrey.h"
+#include "torrey.cuh"
 #include <math.h>
 #include <cmath>
 
@@ -309,12 +309,13 @@ CUDA_HOSTDEV inline bool isfinite(const TVector3<T> &v) {
     return isfinite(v[0]) || isfinite(v[1]) || isfinite(v[2]);
 }
 
+
 template <typename T>
-CUDA_HOSTDEV inline std::ostream& operator<<(std::ostream &os, const TVector2<T> &v) {
+inline std::ostream& operator<<(std::ostream &os, const TVector2<T> &v) {
     return os << "(" << v[0] << ", " << v[1] << ")";
 }
 
 template <typename T>
-CUDA_HOSTDEV inline std::ostream& operator<<(std::ostream &os, const TVector3<T> &v) {
+inline std::ostream& operator<<(std::ostream &os, const TVector3<T> &v) {
     return os << "(" << v[0] << ", " << v[1] << ", " << v[2] << ")";
 }

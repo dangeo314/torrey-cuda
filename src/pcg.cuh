@@ -1,6 +1,6 @@
 #pragma once
 
-#include "torrey.h"
+#include "torrey.cuh"
 
 // We use a random number generator called PCG https://www.pcg-random.org/
 // which is a very lightweight random number generator based on a simple

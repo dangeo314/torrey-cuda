@@ -1,6 +1,6 @@
 #pragma once
 
-#include "torrey.h"
+#include "torrey.cuh"
 #include <mutex>
 
 /// For printing how much work is done for an operation.

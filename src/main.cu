@@ -1,5 +1,5 @@
 #include "hw1.cuh"
-//#include "hw2.cuh"
+#include "hw2.cuh"
 //#include "hw3.cuh"
 //#include "hw4.cuh"
 #include "image.cuh"
@@ -27,7 +27,7 @@ int main(int argc, char *argv[]) {
     if (hw_num == "1_1") {
         Image3 img = hw_1_1(parameters);
         imwrite("hw_1_1.exr", img);
-    }
+    
     /*
     } else if (hw_num == "1_2") {
         Image3 img = hw_1_2(parameters);
@@ -62,9 +62,12 @@ int main(int argc, char *argv[]) {
     } else if (hw_num == "2_4") {
         Image3 img = hw_2_4(parameters);
         imwrite("hw_2_4.exr", img);
+    */
     } else if (hw_num == "2_5") {
         Image3 img = hw_2_5(parameters);
         imwrite("hw_2_5.exr", img);
+    }
+    /*
     } else if (hw_num == "3_1") {
         Image3 img = hw_3_1(parameters);
         imwrite("hw_3_1.exr", img);

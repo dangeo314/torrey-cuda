@@ -1,9 +1,11 @@
 #include "texture.cuh"
 #include "flexception.h"
 
-Vector3 eval(const Texture &texture, const Vector2 &uv) {
-    if (auto *constant = std::get_if<ConstantTexture>(&texture)) {
+__host__ __device__ Vector3 eval(const Texture &texture, const Vector2 &uv) {
+    if (texture.type == CONSTANT) {
+        const ConstantTexture* constant = &texture.data.constant;
         return constant->color;
+    /*
     } else if (auto *image = std::get_if<ImageTexture>(&texture)) {
         const Image3 &img = image->image;
         Real u = modulo(image->uscale * uv[0] + image->uoffset, Real(1)) *
@@ -24,8 +26,9 @@ Vector3 eval(const Texture &texture, const Vector2 &uv) {
                val_fc * (1 - u_off) *      v_off +
                val_cf *      u_off  * (1 - v_off) +
                val_cc *      u_off  *      v_off;
+    */
     } else {
-        Error("Unhandled Texture type");
+        //Error("Unhandled Texture type");
         return Vector3{0, 0, 0};
     }
 }

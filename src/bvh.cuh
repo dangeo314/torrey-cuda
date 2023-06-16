@@ -2,6 +2,7 @@
 
 #include "bbox.cuh"
 #include <vector>
+#include <thrust/universal_vector.h>
 
 struct BVHNode {
     BBox box;
@@ -15,5 +16,5 @@ struct BBoxWithID {
     int id;
 };
 
-int construct_bvh(const std::vector<BBoxWithID> &boxes,
-                  std::vector<BVHNode> &node_pool);
+int construct_bvh(const thrust::universal_vector<BBoxWithID> &boxes,
+                  thrust::universal_vector<BVHNode> &node_pool);

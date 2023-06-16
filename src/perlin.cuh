@@ -1,7 +1,7 @@
 #ifndef PERLIN_H
 #define PERLIN_H
 
-#include "torrey.h"
+#include "torrey.cuh"
 #include <vector>
 #include "image.cuh"
 #include "pcg.cuh"

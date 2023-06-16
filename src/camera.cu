@@ -5,9 +5,9 @@ Camera from_parsed_camera(const ParsedCamera &cam) {
     return Camera{cam.lookfrom, cam.lookat, cam.up, cam.vfov};
 }
 
-CameraRayData compute_camera_ray_data(const Camera &cam, int width, int height) {
+__host__ __device__ CameraRayData compute_camera_ray_data(const Camera &cam, int width, int height) {
     Real aspect_ratio = Real(width) / Real(height);
-    Real viewport_height = 2.0 * tan(radians(cam.vfov / 2));
+    Real viewport_height = 2.0 * tanf(radians(cam.vfov / 2));
     Real viewport_width = aspect_ratio * viewport_height;
 
     Vector3 cam_dir = normalize(cam.lookat - cam.lookfrom);
@@ -22,7 +22,7 @@ CameraRayData compute_camera_ray_data(const Camera &cam, int width, int height) 
     return CameraRayData{origin, top_left_corner, horizontal, vertical};
 }
 
-Ray generate_primary_ray(const CameraRayData &cam_ray_data, Real u, Real v) {
+__host__ __device__ Ray generate_primary_ray(const CameraRayData &cam_ray_data, Real u, Real v) {
     Vector3 dir = normalize(cam_ray_data.top_left_corner +
                             u * cam_ray_data.horizontal -
                             v * cam_ray_data.vertical - cam_ray_data.origin);

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "torrey.h"
+#include "torrey.cuh"
 
 #include <chrono>
 #include <ctime>

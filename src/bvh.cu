@@ -1,6 +1,7 @@
 #include "bvh.cuh"
 #include <vector>
 
+//runs only on host 
 int construct_bvh(const std::vector<BBoxWithID> &boxes,
                   std::vector<BVHNode> &node_pool) {
     if (boxes.size() == 1) {

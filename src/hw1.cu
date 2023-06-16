@@ -198,6 +198,7 @@ Image3 hw_1_3(const std::vector<std::string> &params) {
 }
 */
 
+/* Homework 1.4
 Image3 hw_1_4(const std::vector<std::string> &params) {
     // Homework 1.4: render the scenes defined in hw1_scenes.h
     // output their diffuse color directly.
@@ -248,7 +249,7 @@ Image3 hw_1_4(const std::vector<std::string> &params) {
     }
     return img;
 }
-
+*/
 
 /* Homework 1.5 
 Image3 hw_1_5(const std::vector<std::string> &params) {

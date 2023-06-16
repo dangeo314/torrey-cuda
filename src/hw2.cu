@@ -4,7 +4,7 @@
 #include "material.cuh"
 #include "parallel.cuh"
 #include "parse_scene.cuh"
-#include "pcg.cuh"
+// #include "pcg.cuh"
 #include "print_scene.cuh"
 #include "progressreporter.cuh"
 #include "ray.cuh"
@@ -12,6 +12,19 @@
 #include "timer.cuh"
 #include <optional>
 
+#define checkCudaErrors(val) check_cuda( (val), #val, __FILE__, __LINE__ )
+
+void check_cuda(cudaError_t result, char const *const func, const char *const file, int const line) {
+    if (result) {
+        std::cerr << "CUDA error = " << static_cast<unsigned int>(result) << " at " <<
+            file << ":" << line << " '" << func << "' \n";
+        // Make sure we call CUDA Device Reset before exiting
+        cudaDeviceReset();
+        exit(99);
+    }
+}
+
+/* Homework 2.1
 Image3 hw_2_1(const std::vector<std::string> &params) {
     // Homework 2.1: render a single triangle and outputs
     // its barycentric coordinates.
@@ -42,7 +55,7 @@ Image3 hw_2_1(const std::vector<std::string> &params) {
     Vector3 p1{tri_params[3], tri_params[4], tri_params[5]};
     Vector3 p2{tri_params[6], tri_params[7], tri_params[8]};
 
-    Image3 img(640 /* width */, 480 /* height */);
+    Image3 img(640, 480);
     Camera cam{
         Vector3{0, 0,  0}, // lookfrom
         Vector3{0, 0, -1}, // lookat
@@ -88,7 +101,9 @@ Image3 hw_2_1(const std::vector<std::string> &params) {
 
     return img;
 }
+*/
 
+/* Homework 2.2
 Image3 hw_2_2(const std::vector<std::string> &params) {
     // Homework 2.2: render a triangle mesh.
     // We will use the same camera parameter:
@@ -117,7 +132,7 @@ Image3 hw_2_2(const std::vector<std::string> &params) {
         Vector3i{1, 2, 3}
     };
 
-    Image3 img(640 /* width */, 480 /* height */);
+    Image3 img(640, 480);
     Camera cam{
         Vector3{0, 0,  0}, // lookfrom
         Vector3{0, 0, -1}, // lookat
@@ -173,34 +188,40 @@ Image3 hw_2_2(const std::vector<std::string> &params) {
 
     return img;
 }
+*/
 
-static Vector3 radiance(const Scene &scene, Ray ray) {
+__device__ static Vector3 radiance(const Scene &scene, Ray ray) {
     Vector3 color = Vector3{0.5, 0.5, 0.5};
-    if (auto hit_isect = intersect(scene, ray)) {
-        Vector3 p = hit_isect->position;
-        Vector3 n = hit_isect->geometric_normal;
+    auto hit_isect = intersect(scene, ray);
+    if (hit_isect.distance < infinity<Real>()) {
+        Vector3 p = hit_isect.position;
+        Vector3 n = hit_isect.geometric_normal;
         if (dot(-ray.dir, n) < 0) {
             n = -n;
         }
-        const Material &mat = scene.materials[hit_isect->material_id];
-        if (auto *diffuse = std::get_if<Diffuse>(&mat)) {
+        
+        const Material &mat = scene.materials_ptr[hit_isect.material_id];
+        if (mat.type == DIFFUSE) {
+            const Diffuse* diffuse = &mat.data.diffuse;
             Vector3 L = Vector3{0, 0, 0};
             // Loop over the lights
-            for (const Light &light : scene.lights) {
+            for (int i = 0; i < scene.num_lights; i++) {
                 // Assume point lights for now.
-                const PointLight &point_light = std::get<PointLight>(light);
+                const Light &light = scene.lights_ptr[i];
+                const PointLight &point_light = light.data.point;
                 Vector3 l = point_light.position - p;
                 Ray shadow_ray{p, normalize(l), Real(1e-4), (1 - Real(1e-4)) * length(l)};
                 if (!occluded(scene, shadow_ray)) {
-                    ConstantTexture c = std::get<ConstantTexture>(diffuse->reflectance);
+                    ConstantTexture c = diffuse->reflectance.data.constant;
                     L += (max(dot(n, normalize(l)), Real(0)) / c_PI) *
                          (point_light.intensity / length_squared(l)) *
                          c.color;
                 }
             }
             color = L;
-        } else if (auto *mirror = std::get_if<Mirror>(&mat)) {
-            ConstantTexture c = std::get<ConstantTexture>(mirror->reflectance);
+        } else if (mat.type == MIRROR) {
+            const Mirror* mirror = &mat.data.mirror;
+            ConstantTexture c = mirror->reflectance.data.constant;
             Ray refl_ray{p, ray.dir - 2 * dot(ray.dir, n) * n, Real(1e-4), infinity<Real>()};
             return c.color * radiance(scene, refl_ray);
         }
@@ -208,6 +229,25 @@ static Vector3 radiance(const Scene &scene, Ray ray) {
     return color;
 }
 
+__global__ void generate_parallel_image(Vector3* img, Scene* scene, int w, int h) {
+    int x = threadIdx.x + blockIdx.x * blockDim.x;
+    int y = threadIdx.y + blockIdx.y * blockDim.y;
+
+
+    if (x < w && y < h) {
+        Real u = (x + 0.5f) / w;
+        Real v = (y + 0.5f) / h;
+
+        CameraRayData cam_ray_data = compute_camera_ray_data(scene->camera, w, h);
+        Ray ray = generate_primary_ray(cam_ray_data, u, v);
+
+        Vector3 pixel_color = radiance(*scene, ray);    // insert radiance logic here;
+
+        img[y*w+x] = pixel_color;
+    }
+}
+
+/* Homework 2.3 
 Image3 hw_2_3(const std::vector<std::string> &params) {
     // Homework 2.3: render a scene file provided by our parser.
     if (params.size() < 1) {
@@ -258,7 +298,9 @@ Image3 hw_2_3(const std::vector<std::string> &params) {
 
     return img;
 }
+*/
 
+/* Homework 2.4
 Image3 hw_2_4(const std::vector<std::string> &params) {
     // Homework 2.4: render AABBs of the shapes
     if (params.size() < 1) {
@@ -337,6 +379,7 @@ Image3 hw_2_4(const std::vector<std::string> &params) {
 
     return img;
 }
+*/
 
 Image3 hw_2_5(const std::vector<std::string> &params) {
     // Homework 2.5: rendering with BVHs
@@ -354,43 +397,35 @@ Image3 hw_2_5(const std::vector<std::string> &params) {
     std::cout << "Scene construction done. Took " << tick(timer) << " seconds." << std::endl;
     int spp = scene.samples_per_pixel;
 
-    Image3 img(scene.width, scene.height);
+    int w = scene.width;
+    int h = scene.height;
 
-    int w = img.width;
-    int h = img.height;
+    Vector3* img;
+    size_t size = w * h * sizeof(Vector3);
 
-    CameraRayData cam_ray_data = compute_camera_ray_data(
-        scene.camera, w, h);
+    Scene* sceneUnified;
 
-    constexpr int tile_size = 16;
-    int num_tiles_x = (w + tile_size - 1) / tile_size;
-    int num_tiles_y = (h + tile_size - 1) / tile_size;
+    // Assuming Vector3 is a struct with three float members (x, y, z)
+    checkCudaErrors(cudaMallocManaged(&img, size));
+    checkCudaErrors(cudaMallocManaged(&sceneUnified, sizeof(Scene)));
+    
+    cudaMemcpy(sceneUnified, &scene, sizeof(Scene), cudaMemcpyHostToDevice);
 
-    ProgressReporter reporter(num_tiles_x * num_tiles_y);
+    // Assuming that 'blockSize' is a dim3 type specifying the number of threads per block
+    // and 'numBlocks' is a dim3 type specifying the number of blocks.
+    // You need to choose these values according to your GPU capabilities and image size.
+    dim3 blockSize(16, 16);
+    dim3 numBlocks((w + blockSize.x - 1) / blockSize.x, (h + blockSize.y - 1) / blockSize.y);
+
+    generate_parallel_image<<<numBlocks, blockSize>>>(img, sceneUnified, w, h);
+
+    // cudaMemCpy from DeviceImage back to HostImage
+    cudaDeviceSynchronize();
+
+    // Got rid of PCG and Antialiasing until later
+
     tick(timer);
-    parallel_for([&](const Vector2i &tile) {
-        // Use a different rng stream for each thread.
-        pcg32_state rng = init_pcg32(tile[1] * num_tiles_x + tile[0]);
-        int x0 = tile[0] * tile_size;
-        int x1 = min(x0 + tile_size, w);
-        int y0 = tile[1] * tile_size;
-        int y1 = min(y0 + tile_size, h);
-        for (int y = y0; y < y1; y++) {
-            for (int x = x0; x < x1; x++) {
-                for (int s = 0; s < spp; s++) {
-                    Real u, v;
-                    u = (x + next_pcg32_real<Real>(rng)) / w;
-                    v = (y + next_pcg32_real<Real>(rng)) / h;
-
-                    Ray ray = generate_primary_ray(cam_ray_data, u, v);
-                    img(x, y) += radiance(scene, ray) / Real(spp);
-                }
-            }
-        }
-        reporter.update(1);
-    }, Vector2i(num_tiles_x, num_tiles_y));
-    reporter.done();
     std::cout << "Rendering done. Took " << tick(timer) << " seconds." << std::endl;
 
-    return img;
+    return Image3(img, w,h);
 }

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "torrey.h"
+#include "torrey.cuh"
 #include "matrix.cuh"
 #include "vector.cuh"
 

@@ -5,7 +5,7 @@
 /// Numerically stable quadratic equation solver at^2 + bt + c = 0
 /// See https://people.csail.mit.edu/bkph/articles/Quadratics.pdf
 /// returns false when it can't find solutions.
-inline bool solve_quadratic(Real a, Real b, Real c, Real *t0, Real *t1) {
+__host__ __device__ inline bool solve_quadratic(Real a, Real b, Real c, Real *t0, Real *t1) {
     // Degenerated case
     if (a == 0) {
         if (b == 0) {
@@ -30,7 +30,7 @@ inline bool solve_quadratic(Real a, Real b, Real c, Real *t0, Real *t1) {
     return true;
 }
 
-inline std::optional<Intersection> intersect(const Sphere &sph, const Ray &ray) {
+__host__ __device__ inline Intersection intersect(const Sphere &sph, const Ray &ray) {
     // Our sphere is ||p - x||^2 = r^2
     // substitute x = o + d * t, we want to solve for t
     // ||p - (o + d * t)||^2 = r^2
@@ -76,7 +76,7 @@ inline std::optional<Intersection> intersect(const Sphere &sph, const Ray &ray) 
     return {};
 }
 
-std::optional<Vector3>
+__host__ __device__ Vector3
     intersect_triangle(const Ray &ray,
                        const Vector3 &p0,
                        const Vector3 &p1,
@@ -102,29 +102,30 @@ std::optional<Vector3>
     return {};
 }
 
-inline std::optional<Intersection> intersect(const Triangle &tri, const Ray &ray) {
+__host__ __device__ inline Intersection intersect(const Triangle &tri, const Ray &ray) {
 	const TriangleMesh &mesh = *tri.mesh;
-	Vector3i index = mesh.indices[tri.face_index];
-	Vector3 p0 = mesh.positions[index[0]];
-	Vector3 p1 = mesh.positions[index[1]];
-	Vector3 p2 = mesh.positions[index[2]];
-	if (auto uvt_ = intersect_triangle(ray, p0, p1, p2)) {
-		Vector2 b = Vector2{uvt_->x, uvt_->y};
-		Real t = uvt_->z;
+	Vector3i index = mesh.indices_ptr[tri.face_index];
+	Vector3 p0 = mesh.positions_ptr[index[0]];
+	Vector3 p1 = mesh.positions_ptr[index[1]];
+	Vector3 p2 = mesh.positions_ptr[index[2]];
+    auto uvt_ = intersect_triangle(ray, p0, p1, p2);
+	if (uvt_[2] < infinity<Real>()) {
+		Vector2 b = Vector2{uvt_.x, uvt_.y};
+		Real t = uvt_.z;
 		Vector3 p = (1 - b[0] - b[1]) * p0 + b[0] * p1 + b[1] * p2;
 		Vector3 geometric_normal = normalize(cross(p1 - p0, p2 - p0));
         Vector2 uv = b;
         if (mesh.uvs.size() > 0) {
-            Vector2 uv0 = mesh.uvs[index[0]];
-            Vector2 uv1 = mesh.uvs[index[1]];
-            Vector2 uv2 = mesh.uvs[index[2]];
+            Vector2 uv0 = mesh.uvs_ptr[index[0]];
+            Vector2 uv1 = mesh.uvs_ptr[index[1]];
+            Vector2 uv2 = mesh.uvs_ptr[index[2]];
             uv = (1 - b[0] - b[1]) * uv0 + b[0] * uv1 + b[1] * uv2;
         }
         Vector3 shading_normal = geometric_normal;
         if (mesh.normals.size() > 0) {
-            Vector3 n0 = mesh.normals[index[0]];
-            Vector3 n1 = mesh.normals[index[1]];
-            Vector3 n2 = mesh.normals[index[2]];
+            Vector3 n0 = mesh.normals_ptr[index[0]];
+            Vector3 n1 = mesh.normals_ptr[index[1]];
+            Vector3 n2 = mesh.normals_ptr[index[2]];
             shading_normal = normalize((1 - b[0] - b[1]) * n0 + b[0] * n1 + b[1] * n2);
         }
 		return Intersection{p, // position
@@ -138,10 +139,12 @@ inline std::optional<Intersection> intersect(const Triangle &tri, const Ray &ray
 	return {};
 }
 
-std::optional<Intersection> intersect(const Shape &shape, const Ray &ray) {
-	if (auto *sph = std::get_if<Sphere>(&shape)) {
+__host__ __device__ Intersection intersect(const Shape &shape, const Ray &ray) {
+	if (shape.type==SPHERE) {
+        const Sphere* sph = &shape.data.sphere;
 		return intersect(*sph, ray);
-	} else if(auto *tri = std::get_if<Triangle>(&shape)) {
+	} else if (shape.type==TRIANGLE) {
+        const Triangle* tri = &shape.data.tri;
 		return intersect(*tri, ray);
 	} else {
 		assert(false);
@@ -149,13 +152,15 @@ std::optional<Intersection> intersect(const Shape &shape, const Ray &ray) {
 	}
 }
 
-bool occluded(const Shape &shape, const Ray &ray) {
-    return bool(intersect(shape, ray));
+__host__ __device__ bool occluded(const Shape &shape, const Ray &ray) {
+    return bool(intersect(shape, ray).distance < infinity<Real>());
 }
 
-PointAndNormal sample_on_shape(const Shape &shape,
+__host__ __device__ PointAndNormal sample_on_shape(const Shape &shape,
                                const Vector2 &u) {
-    if (auto *sph = std::get_if<Sphere>(&shape)) {
+
+    if (shape.type==SPHERE) {
+        const Sphere* sph = &shape.data.sphere;
         Real theta = acos(std::clamp(1 - 2 * u[0], Real(-1), Real(1)));
         Real phi = 2 * c_PI * u[1];
         Vector3 n{
@@ -165,21 +170,22 @@ PointAndNormal sample_on_shape(const Shape &shape,
         };
         Vector3 p = sph->radius * n + sph->center;
         return {p, n};
-    } else if (auto *tri = std::get_if<Triangle>(&shape)) {
+    } else if (shape.type==TRIANGLE) {
+        const Triangle* tri = &shape.data.tri;
         Real b1 = 1 - sqrt(max(u[0], Real(0)));
         Real b2 = u[1] * sqrt(max(u[0], Real(0)));
         const TriangleMesh *mesh = tri->mesh;
-        Vector3i index = mesh->indices[tri->face_index];
-        Vector3 p0 = mesh->positions[index[0]];
-        Vector3 p1 = mesh->positions[index[1]];
-        Vector3 p2 = mesh->positions[index[2]];
+        Vector3i index = mesh->indices_ptr[tri->face_index];
+        Vector3 p0 = mesh->positions_ptr[index[0]];
+        Vector3 p1 = mesh->positions_ptr[index[1]];
+        Vector3 p2 = mesh->positions_ptr[index[2]];
         Vector3 p = (1 - b1 - b2) * p0 + b1 * p1 + b2 * p2;
         Vector3 geometric_normal = normalize(cross(p1 - p0, p2 - p0));
         Vector3 shading_normal = geometric_normal;
         if (mesh->normals.size() > 0) {
-            Vector3 n0 = mesh->normals[index[0]];
-            Vector3 n1 = mesh->normals[index[1]];
-            Vector3 n2 = mesh->normals[index[2]];
+            Vector3 n0 = mesh->normals_ptr[index[0]];
+            Vector3 n1 = mesh->normals_ptr[index[1]];
+            Vector3 n2 = mesh->normals_ptr[index[2]];
             shading_normal = normalize((1 - b1 - b2) * n0 + b1 * n1 + b2 * n2);
         }
         if (dot(geometric_normal, shading_normal) < 0) {
@@ -192,9 +198,10 @@ PointAndNormal sample_on_shape(const Shape &shape,
     }
 }
 
-Real pdf_sample_on_shape(const Shape &shape,
+__host__ __device__ Real pdf_sample_on_shape(const Shape &shape,
                          const Vector3 &p, pcg32_state rng) {
-    if (auto *sph = std::get_if<Sphere>(&shape)) {
+    if (shape.type==SPHERE) {
+        const Sphere* sph = &shape.data.sphere;
         // cone angle = solid angle = sqrt(1 - (r^2)/(lensquared(center - point)))
         /*
         std::cout << "Sphere Center: " << sph->center << std::endl;
@@ -215,12 +222,13 @@ Real pdf_sample_on_shape(const Shape &shape,
         return result;
         
 
-    } else if (auto *tri = std::get_if<Triangle>(&shape)) {
+    } else if (shape.type==TRIANGLE) {
+        const Triangle* tri = &shape.data.tri;
         const TriangleMesh *mesh = tri->mesh;
-        Vector3i index = mesh->indices[tri->face_index];
-        Vector3 p0 = mesh->positions[index[0]];
-        Vector3 p1 = mesh->positions[index[1]];
-        Vector3 p2 = mesh->positions[index[2]];
+        Vector3i index = mesh->indices_ptr[tri->face_index];
+        Vector3 p0 = mesh->positions_ptr[index[0]];
+        Vector3 p1 = mesh->positions_ptr[index[1]];
+        Vector3 p2 = mesh->positions_ptr[index[2]];
         return Real(1) / (Real(0.5) * length(cross(p1 - p0, p2 - p0)));
     } else {
         assert(false);

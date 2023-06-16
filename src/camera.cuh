@@ -1,5 +1,4 @@
 #pragma once
-
 #include "parse_scene.cuh"
 
 struct Ray;
@@ -11,6 +10,7 @@ struct Camera {
     Real vfov;
 };
 
+//we initialize a camera only on host
 Camera from_parsed_camera(const ParsedCamera &cam);
 
 struct CameraRayData {
@@ -20,6 +20,6 @@ struct CameraRayData {
     Vector3 vertical;
 };
 
-CameraRayData compute_camera_ray_data(const Camera &cam, int width, int height);
+__host__ __device__ CameraRayData compute_camera_ray_data(const Camera &cam, int width, int height);
 
-Ray generate_primary_ray(const CameraRayData &cam_ray_data, Real u, Real v);
+__host__ __device__ Ray generate_primary_ray(const CameraRayData &cam_ray_data, Real u, Real v);

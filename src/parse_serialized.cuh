@@ -1,6 +1,6 @@
 #pragma once
 
-#include "torrey.h"
+#include "torrey.cuh"
 #include "matrix.cuh"
 #include "parse_scene.cuh"
 #include <filesystem>
